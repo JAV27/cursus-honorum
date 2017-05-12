@@ -7,7 +7,7 @@
             "pp3": "cucurri",
             "pp4": "cursus",
             "conj": "3",
-            "def": "to run",
+            "def": "to run"
         },
 
         {
@@ -16,7 +16,7 @@
             "pp3": "secui",
             "pp4": "sectus",
             "conj": "1",
-            "def": "to cut",
+            "def": "to cut"
         },
 
         {
@@ -25,8 +25,8 @@
             "pp3": "vidi",
             "pp4": "visus",
             "conj": "2",
-            "def": "to see",
-        },
+            "def": "to see"
+        }
 
     ]
 }
