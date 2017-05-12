@@ -1,0 +1,32 @@
+{
+    "verbs": [
+
+        {
+            "pp1": "curro",
+            "inf": "currere",
+            "pp3": "cucurri",
+            "pp4": "cursus",
+            "conj": "3",
+            "def": "to run",
+        },
+
+        {
+            "pp1": "seco",
+            "inf": "secare",
+            "pp3": "secui",
+            "pp4": "sectus",
+            "conj": "1",
+            "def": "to cut",
+        },
+
+        {
+            "pp1": "video",
+            "inf": "videre",
+            "pp3": "vidi",
+            "pp4": "visus",
+            "conj": "2",
+            "def": "to see",
+        },
+
+    ]
+}
