@@ -1,5 +1,5 @@
 //JSON Test
-$.getJSON("http://JAV27.github.io/cursus-honorum/words.json", function(data) {
+$.getJSON("http://JAV27.github.io/cursus-honorum/assets/js/words.json", function(data) {
     partialConj(data.verbs[1], 0, 1);
     console.log(fullChart);
 });
