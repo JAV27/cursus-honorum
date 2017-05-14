@@ -1,0 +1,49 @@
+@import 'partials/variables'
+
+div.body
+    border: 1px solid black
+    width: 80vw
+    height: 80vh
+    margin-left: auto
+    margin-right: auto
+    box-sizing: border-box
+    .header
+        height: 10%
+        padding: 10px
+        text-align: right
+        background-color: $mainColor
+        p
+            cursor: pointer
+            display: inline
+            color: white
+    .main
+        height: 90%
+        .settings
+            div.container
+                display: flex
+                flex-direction: row
+                width: 100%
+                h3
+                    width: 10%
+                    font-size: 20px
+                div.options
+                    display: flex
+                    flex-direction: row
+                    align-items: center
+                    p.option
+                        margin-left: 80px
+                        cursor: pointer
+                        text-align: center
+                        box-sizing: border-box
+                        padding-bottom: 3px
+                        padding-left: 15px
+                        padding-right: 15px
+            p.exit
+                cursor: pointer
+                color: red
+                display: inline
+        .startMenu
+            div.playButton
+                cursor: pointer
+.hide
+    display: none

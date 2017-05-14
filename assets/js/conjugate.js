@@ -1,83 +1,92 @@
+//Variables
+var firstPerson = 1;
+var secondPerson = 2;
+var thirdPerson = 3;
+var singular = 0;
+var plural = 1;
+var active = 0;
+var passive = 1;
+var present = 0;
+var imperfect = 1;
+var future = 2;
+var perfect = 3;
+var pluPerfect =4;
+var futurePerfect = 5;
+var fullChart;
+
 //JSON Test
 $.getJSON("http://JAV27.github.io/cursus-honorum/assets/js/words.json", function(data) {
-    partialConj(data.verbs[1], 0, 1);
-    console.log(fullChart);
+    console.log(conjugate(data.verbs[1], firstPerson, plural, passive, futurePerfect));
 });
 
 //Conjugating
-var fullChart;
-
 function chart(rootValue, firstSing, secondSing, thirdSing, firstPlu, secondPlu, thirdPlu) {
-    this.singular = [
-        rootValue + firstSing,
-        rootValue + secondSing,
-        rootValue + thirdSing,
-    ];
-
-    this.plural = [
-        rootValue + firstPlu,
-        rootValue + secondPlu,
-        rootValue + thirdPlu,
-    ];
+    this.number = [
+        [rootValue + firstSing, rootValue + secondSing, rootValue + thirdSing],
+        [rootValue + firstPlu, rootValue + secondPlu, rootValue + thirdPlu]
+    ]
 }
 
 function conjugate(word, person, number, voice, tense) {
-    partialConj(word, voice, tense);
+    getChart(word, voice, tense);
+    return fullChart.number[number][person-1];
 }
 
-function partialConj(word, voice, tense) {
+function getChart(word, voice, tense) {
     var inf = word.inf;
     var pp3 = word.pp3;
     var pp4 = word.pp4;
     var conj = word.conj;
 
     switch(voice) {
-        case 0:
+        case active:
             switch(tense) {
-                case 0:
+                case present:
                     activePresentConj(inf, conj);
                     break;
-                case 1:
+                case imperfect:
                     activeImperfectConj(inf, conj);
                     break;
-                case 2:
+                case future:
                     activeFutureConj(inf, conj);
                     break;
-                case 3:
+                case perfect:
                     activePerfectConj(pp3);
                     break;
-                case 4:
-                    activeFuturePerfectConj(pp3);
-                    break;
-                case 5:
+                case pluPerfect:
                     activePluPerfectConj(pp3);
                     break;
+                case futurePerfect:
+                    activeFuturePerfectConj(pp3);
+                    break;
                 default:
                     return null;
             }
-        case 1:
+            break;
+        case passive:
             switch(tense) {
-                case 0:
+                case present:
                     passivePresentConj(inf, conj);
                     break;
-                case 1:
+                case imperfect:
                     passiveImperfectConj(inf, conj);
                     break;
-                case 2:
+                case future:
                     passiveFutureConj(inf, conj);
                     break;
-                case 3:
+                case perfect:
                     passivePerfectConj(pp4);
                     break;
-                case 4:
-                    passiveFuturePerfectConj(pp4);
-                    break;
-                case 5:
+                case pluPerfect:
                     passivePluPerfectConj(pp4);
+                    break;
+                case futurePerfect:
+                    passiveFuturePerfectConj(pp4);
                     break;
                 default:
                     return null;
             }
+            break;
         default:
             return null;
     }
