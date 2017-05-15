@@ -7,25 +7,39 @@ $.getJSON("http://JAV27.github.io/cursus-honorum/assets/js/words.json", function
     console.log(conjugate(data.verbs[1], firstPerson, plural, passive, futurePerfect));
 });
 
-//Conjugating
+//Takes in: The endings of the chart and a rootValue for the word
 function chart(rootValue, firstSing, secondSing, thirdSing, firstPlu, secondPlu, thirdPlu) {
+
+    //Adds the root of the word to each corresponding ending
+    //Broken up into two arrays by number (singular, plural)
     this.number = [
         [rootValue + firstSing, rootValue + secondSing, rootValue + thirdSing],
         [rootValue + firstPlu, rootValue + secondPlu, rootValue + thirdPlu]
     ]
 }
 
+//Takes in: A word object and how to conjugate it
+//Returns: The word string in conjugated form
 function conjugate(word, person, number, voice, tense) {
+
+    //Gets the full chart
     getChart(word, voice, tense);
+
+    //Takes the one ending needed from the chart
     return fullChart.number[number][person-1];
 }
 
-function getChart(word, voice, tense) {
+//Takes in: A word object and the options needed to get the full chart
+function getChart(word, voice, tense)
+
+    //Root word variables
     var inf = word.inf;
     var pp3 = word.pp3;
     var pp4 = word.pp4;
     var conj = word.conj;
 
+    //If voice is active go to the active charts for the tense
+    //If voice is passive go to the passive charts for the tense
     switch(voice) {
         case active:
             switch(tense) {
@@ -79,6 +93,10 @@ function getChart(word, voice, tense) {
             return null;
     }
 }
+
+//All the chart conjugation functions
+//Takes in: the root needed and a conjugation if need be
+//Does: Sets the corresponding chart to the fullChart variable
 
 function activePresentConj(inf, conj) {
     var infRoot = inf.substring(0, inf.length-3);
