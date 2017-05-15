@@ -1,17 +1,5 @@
 //Variables
-var firstPerson = 1;
-var secondPerson = 2;
-var thirdPerson = 3;
-var singular = 0;
-var plural = 1;
-var active = 0;
-var passive = 1;
-var present = 0;
-var imperfect = 1;
-var future = 2;
-var perfect = 3;
-var pluPerfect =4;
-var futurePerfect = 5;
+var firstPerson = 1, secondPerson = 2, thirdPerson = 3, singular = 0, plural = 1, active = 0, passive = 1, present = 0, imperfect = 1, future = 2, perfect = 3, pluPerfect =4, futurePerfect = 5;
 var fullChart;
 
 //JSON Test
