@@ -1,7 +1,7 @@
 div.body {
   border: 1px solid black;
   width: 80vw;
-  height: 80vh;
+  height: 70vh;
   margin-left: auto;
   margin-right: auto;
   box-sizing: border-box; }
@@ -15,20 +15,20 @@ div.body {
       display: inline;
       color: white; }
   div.body .main {
-    height: 90%; }
+    height: 80%; }
     div.body .main .settings div.container {
       display: flex;
       flex-direction: row;
       width: 100%; }
       div.body .main .settings div.container h3 {
         width: 10%;
-        font-size: 20px; }
+        font-size: 16px; }
       div.body .main .settings div.container div.options {
         display: flex;
         flex-direction: row;
         align-items: center; }
         div.body .main .settings div.container div.options p.option {
-          margin-left: 80px;
+          margin-left: 60px;
           cursor: pointer;
           text-align: center;
           box-sizing: border-box;
@@ -41,6 +41,52 @@ div.body {
       display: inline; }
     div.body .main .startMenu div.playButton {
       cursor: pointer; }
+    div.body .main .gameScreen {
+      height: 55vh; }
+      div.body .main .gameScreen .gameHeader {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        height: 10%;
+        padding: 20px;
+        border-bottom: 1px solid black;
+        font-size: 18px; }
+        div.body .main .gameScreen .gameHeader .clock {
+          font-size: 24px;
+          letter-spacing: 4px; }
+      div.body .main .gameScreen .gameBody {
+        display: flex;
+        height: 70%; }
+        div.body .main .gameScreen .gameBody h2 {
+          font-weight: normal;
+          font-size: 24px; }
+        div.body .main .gameScreen .gameBody ul {
+          list-style-type: none; }
+          div.body .main .gameScreen .gameBody ul li {
+            padding: 5px;
+            font-size: 18px; }
+        div.body .main .gameScreen .gameBody div.principleParts {
+          margin-left: 100px; }
+        div.body .main .gameScreen .gameBody div.form {
+          margin-left: 200px; }
+      div.body .main .gameScreen .gameFooter {
+        border-top: 1px solid black;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding-top: 25px; }
+        div.body .main .gameScreen .gameFooter input[type="text"] {
+          width: 70%;
+          line-height: 30px;
+          font-size: 16px; }
+        div.body .main .gameScreen .gameFooter div.submit {
+          line-height: 30px;
+          box-sizing: padding-box;
+          margin-left: 20px;
+          background-color: #ccc;
+          cursor: pointer;
+          padding: 3px; }
 
 .hide {
   display: none; }
