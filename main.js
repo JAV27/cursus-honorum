@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+
+
     var settingsPage = $('div.settings');
     var startMenuPage = $('div.startMenu');
 
@@ -29,7 +31,69 @@ $(document).ready(function() {
     ];
 
     //Assigns variable to each subarray within settings aray that correspond to the type of setting
-    var conjSettings = settings[0], personSettings = settings[1], numberSettings = settings[2], tenseSettings = settings[3], voiceSettings = settings[4];
+    var conjSettings = settings[0], voiceSettings = settings[1], tenseSettings = settings[2], personSettings = settings[3], numberSettings = settings[4];
+
+    var conjugation;
+
+    function fillInterface() {
+        $.getJSON("http://JAV27.github.io/cursus-honorum/assets/js/words.json", function(data) {
+
+            var newWordList = [];
+
+            for(var i=0;i<data.verbs.length;i++) {
+                var num = data.verbs[i].conj;
+                if(conjSettings.includes(num.toString())) {
+                    newWordList.push(data.verbs[i]);
+                }
+            }
+
+            var randomIndex = Math.floor(Math.random() * newWordList.length);
+            var randomWord = newWordList[randomIndex];
+
+            $('.pp1').html(randomWord.pp1 + ",");
+            $('.inf').html(randomWord.inf + ",");
+            $('.pp3').html(randomWord.pp3 + ",");
+            $('.pp4').html(randomWord.pp4 + ",");
+
+            setForm();
+            getChart(randomWord, voice, tense);
+            var answer = conjugate(randomWord, person, number, voice, tense);
+            $('.submit').attr('id', answer);
+        });
+    }
+
+    var voice, person, number, tense;
+
+    //gets random settings and puts into html
+    function setForm() {
+
+        var voiceIndex = Math.floor(Math.random() * voiceSettings.length);
+        voice = voiceSettings[voiceIndex];
+
+        var tenseIndex = Math.floor(Math.random() * tenseSettings.length);
+        tense = tenseSettings[tenseIndex];
+
+        var personIndex = Math.floor(Math.random() * personSettings.length);
+        person = personSettings[personIndex];
+
+        var numberIndex = Math.floor(Math.random() * numberSettings.length);
+        number = numberSettings[numberIndex];
+
+        $('.voice').html(voice);
+        $('.tense').html(tense);
+        $('.person').html(person);
+        $('.number').html(number);
+
+        //needed to run getChart() properly
+        if(number === "Singular") {
+            number = 0;
+        } else if(number === "Plural") {
+            number = 1;
+        }
+
+        person = person.substring(0,1);
+
+    }
 
     //Triggers: When the play button is clicked on the main screen
     $('div.playButton').on('click', function() {
@@ -66,7 +130,13 @@ $(document).ready(function() {
         //Shows the game screen
         startMenuPage.hide();
         $('p.settings').hide();
+        fillInterface();
         $("div.gameScreen").show();
 
     });
+
+
+
+
+
 });
