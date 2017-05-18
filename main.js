@@ -1,7 +1,5 @@
 $(document).ready(function() {
 
-
-
     var settingsPage = $('div.settings');
     var startMenuPage = $('div.startMenu');
 
