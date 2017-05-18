@@ -1,11 +1,5 @@
 //Variables
-var firstPerson = 1, secondPerson = 2, thirdPerson = 3, singular = 0, plural = 1, active = 0, passive = 1, present = 0, imperfect = 1, future = 2, perfect = 3, pluPerfect =4, futurePerfect = 5;
 var fullChart;
-
-//JSON Test
-$.getJSON("http://JAV27.github.io/cursus-honorum/assets/js/words.json", function(data) {
-    console.log(conjugate(data.verbs[1], firstPerson, plural, passive, futurePerfect));
-});
 
 //Takes in: The endings of the chart and a rootValue for the word
 function chart(rootValue, firstSing, secondSing, thirdSing, firstPlu, secondPlu, thirdPlu) {
@@ -22,15 +16,12 @@ function chart(rootValue, firstSing, secondSing, thirdSing, firstPlu, secondPlu,
 //Returns: The word string in conjugated form
 function conjugate(word, person, number, voice, tense) {
 
-    //Gets the full chart
-    getChart(word, voice, tense);
-
     //Takes the one ending needed from the chart
     return fullChart.number[number][person-1];
 }
 
 //Takes in: A word object and the options needed to get the full chart
-function getChart(word, voice, tense)
+function getChart(word, voice, tense) {
 
     //Root word variables
     var inf = word.inf;
@@ -41,48 +32,48 @@ function getChart(word, voice, tense)
     //If voice is active go to the active charts for the tense
     //If voice is passive go to the passive charts for the tense
     switch(voice) {
-        case active:
+        case "Active":
             switch(tense) {
-                case present:
+                case "Present":
                     activePresentConj(inf, conj);
                     break;
-                case imperfect:
+                case "Imperfect":
                     activeImperfectConj(inf, conj);
                     break;
-                case future:
+                case "Future":
                     activeFutureConj(inf, conj);
                     break;
-                case perfect:
+                case "Perfect":
                     activePerfectConj(pp3);
                     break;
-                case pluPerfect:
+                case "Plu Perfect":
                     activePluPerfectConj(pp3);
                     break;
-                case futurePerfect:
+                case "Future Perfect":
                     activeFuturePerfectConj(pp3);
                     break;
                 default:
                     return null;
             }
             break;
-        case passive:
+        case "Passive":
             switch(tense) {
-                case present:
+                case "Present":
                     passivePresentConj(inf, conj);
                     break;
-                case imperfect:
+                case "Imperfect":
                     passiveImperfectConj(inf, conj);
                     break;
-                case future:
+                case "Future":
                     passiveFutureConj(inf, conj);
                     break;
-                case perfect:
+                case "Perfect":
                     passivePerfectConj(pp4);
                     break;
-                case pluPerfect:
+                case "Plu Perfect":
                     passivePluPerfectConj(pp4);
                     break;
-                case futurePerfect:
+                case "Future Perfect":
                     passiveFuturePerfectConj(pp4);
                     break;
                 default:
@@ -149,9 +140,10 @@ function activeFutureConj(inf, conj) {
     var infRoot = inf.substring(0, inf.length-3);
     var infSmallRoot = inf.substring(0, inf.length-2);
 
-    if(conj === ("1" || "2")) {
+    if(conj === "1" || conj === "2") {
         fullChart = new chart(infSmallRoot, "bo", "bis", "bit", "bimis", "bitis", "bunt");
     }
+
     switch(conj) {
         case "3":
             fullChart = new chart(infRoot, "am", "es", "et", "emus", "etus", "ent");
@@ -212,9 +204,9 @@ function passiveImperfectConj(inf, conj) {
     var infRoot = inf.substring(0, inf.length-3);
     var infSmallRoot = inf.substring(0, inf.length-2);
 
-    if(conj === ("1" || "2" || "3")) {
+    if(conj === "1" || conj === "2" || conj ==="3") {
         fullChart = new chart(infSmallRoot, "bar", "baris", "batur", "bamur", "bamini", "bantur");
-    } else if(conj === ("3io" || "4")) {
+    } else if(conj === "3io" || conj === "4") {
         fullChart = new chart(infRoot, "iebar", "iebaris", "iebatur", "iebamur", "iebamini", "iebantur");
     }
 }
@@ -223,7 +215,7 @@ function passiveFutureConj(inf, conj) {
     var infRoot = inf.substring(0, inf.length-3);
     var infSmallRoot = inf.substring(0, inf.length-2);
 
-    if(conj === ("1" || "2")) {
+    if(conj === "1" || conj === "2") {
         fullChart = new chart(infSmallRoot, "bor", "beris", "bitur", "bimur", "bimini", "buntur");
     }
 
