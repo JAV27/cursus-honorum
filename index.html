@@ -2,8 +2,8 @@
 <html>
     <head>
         <script src="jquery-3.2.1.js"></script>
-        <script src="main.js" type="text/javascript"></script>
         <script src="assets/js/conjugate.js" type="text/javascript"></script>
+        <script src="main.js" type="text/javascript"></script>
         <link rel="stylesheet" href="main.css">
         <link rel="stylesheet" href="assets/hover.css" media="all">
     </head>
@@ -28,22 +28,12 @@
                             </div>
                         </div>
                     </div>
-                    <div class="person">
+                    <div class="voice">
                         <div class="container">
-                            <h3>person:</h3>
+                            <h3>voice:</h3>
                             <div class="options">
-                                <p class="option hvr-underline-from-center clk-underline-from-center">1st Person</p>
-                                <p class="option hvr-underline-from-center clk-underline-from-center">2nd Person</p>
-                                <p class="option hvr-underline-from-center clk-underline-from-center">3rd Person</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="number">
-                        <div class="container">
-                            <h3>number:</h3>
-                            <div class="options">
-                                <p class="option hvr-underline-from-center clk-underline-from-center">Singular</p>
-                                <p class="option hvr-underline-from-center clk-underline-from-center">Plural</p>
+                                <p class="option hvr-underline-from-center clk-underline-from-center">Active</p>
+                                <p class="option hvr-underline-from-center clk-underline-from-center">Passive</p>
                             </div>
                         </div>
                     </div>
@@ -60,12 +50,22 @@
                             </div>
                         </div>
                     </div>
-                    <div class="voice">
+                    <div class="person">
                         <div class="container">
-                            <h3>voice:</h3>
+                            <h3>person:</h3>
                             <div class="options">
-                                <p class="option hvr-underline-from-center clk-underline-from-center">Active</p>
-                                <p class="option hvr-underline-from-center clk-underline-from-center">Passive</p>
+                                <p class="option hvr-underline-from-center clk-underline-from-center">1st Person</p>
+                                <p class="option hvr-underline-from-center clk-underline-from-center">2nd Person</p>
+                                <p class="option hvr-underline-from-center clk-underline-from-center">3rd Person</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="number">
+                        <div class="container">
+                            <h3>number:</h3>
+                            <div class="options">
+                                <p class="option hvr-underline-from-center clk-underline-from-center">Singular</p>
+                                <p class="option hvr-underline-from-center clk-underline-from-center">Plural</p>
                             </div>
                         </div>
                     </div>
@@ -86,22 +86,23 @@
                         <div class="principleParts">
                             <h2>Principle Parts:</h2>
                             <ul>
-                                <li>laudo,</li>
-                                <li>laudare,</li>
-                                <li>laudavi,</li>
-                                <li>laudatus,</li>
+                                <li class="pp1">laudo,</li>
+                                <li class="inf">laudare,</li>
+                                <li class="pp3">laudavi,</li>
+                                <li class="pp4">laudatus,</li>
                             </ul>
                         </div>
                         <div class="form">
                             <h2>Form:</h2>
                             <ul>
-                                <li>Active</li>
-                                <li>Future</li>
-                                <li>1st Person Singular</li>
+                                <li class="voice"></li>
+                                <li class="tense"></li>
+                                <li class="person"></li>
+                                <li class="number"></li>
                             </ul>
                         </div>
                     </div>
-                    <div class="gameFooter">                    
+                    <div class="gameFooter">
                         <input type="text" placeholder="Answer Here">
                         <div class="submit">
                             Answer
