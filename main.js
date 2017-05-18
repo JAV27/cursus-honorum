@@ -133,8 +133,13 @@ $(document).ready(function() {
 
     });
 
-
-
-
+    $('div.submit').on('click', function() {
+        var userInput = $('input').val().trim().toLowerCase();
+        if(userInput === $(this).attr('id').toLowerCase()) {
+            alert('Correct!');
+        } else {
+            alert('You should go down to honors');
+        }
+    });
 
 });
