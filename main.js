@@ -3,22 +3,20 @@ $(document).ready(function() {
     var settingsPage = $('div.settings');
     var startMenuPage = $('div.startMenu');
 
-    //Triggers: When settings button is clicked in the header
-    //Does: Hides the main page and opens up the settings page
+    //Hides the main page and opens up the settings page
     $("p.settings").on('click', function() {
         settingsPage.show();
         startMenuPage.hide();
     });
 
-    //Triggers: When exit button in settings is clicked
-    //Does: Hides the settings page and opens up the main page
+    //Hides the settings page and opens up the main page
     $(".exit").on('click', function() {
         settingsPage.hide();
         startMenuPage.show();
     });
 
     //Triggers: When option in the settings is clicked
-    //Does: Adds a class which underlines the option
+    //Adds a class which underlines the option
     $('p.option').on('click', function() {
         $(this).toggleClass('clk-underline-from-center');
     });
@@ -33,7 +31,28 @@ $(document).ready(function() {
 
     var conjugation;
 
+    var userScreen;
+
+    function Interface() {
+
+        this.points = 0;
+        this.count = 1;
+        $('.turnNumber').html(this.count + " out of 10");
+        this.updatePoints = function() {
+            this.points+=100;
+            $('.points').html(this.points + " points");
+        }
+        this.updateTurn = function() {
+            this.count++;
+            $('.turnNumber').html(this.count + " out of 10");
+        }
+        this.fill = fillInterface;
+
+    }
+
+    //Fills out verb into html and calls setForm
     function fillInterface() {
+
         $.getJSON("http://JAV27.github.io/cursus-honorum/assets/js/words.json", function(data) {
 
             var newWordList = [];
@@ -128,18 +147,22 @@ $(document).ready(function() {
         //Shows the game screen
         startMenuPage.hide();
         $('p.settings').hide();
-        fillInterface();
         $("div.gameScreen").show();
-
+        userScreen = new Interface();
+        userScreen.fill();
+        $('.points').html(userScreen.points + " points");
     });
 
+    //Compares user input to answer
     $('div.submit').on('click', function() {
         var userInput = $('input').val().trim().toLowerCase();
         if(userInput === $(this).attr('id').toLowerCase()) {
             alert('Correct!');
+            userScreen.updatePoints();
+            userScreen.updateTurn();
+            userScreen.fill();
         } else {
             alert('You should go down to honors');
         }
     });
-
 });
