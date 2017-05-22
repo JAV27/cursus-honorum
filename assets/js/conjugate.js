@@ -243,6 +243,6 @@ function passivePluPerfectConj(pp4) {
 }
 
 function passiveFuturePerfectConj(pp4) {
-    fullChart = new chart(pp4, " ero", " eris", " erit", " erimus", " eritus", " erunt");
+    fullChart = new chart(pp4, " ero", " eris", " erit", " erimus", " eritis", " erunt");
 }
 //
