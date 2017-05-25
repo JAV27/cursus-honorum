@@ -53,7 +53,7 @@ $(document).ready(function() {
     //Fills out verb into html and calls setForm
     function fillInterface() {
 
-        $.getJSON("http://JAV27.github.io/cursus-honorum/assets/js/words.json", function(data) {
+        $.getJSON("https://JAV27.github.io/cursus-honorum/assets/js/words.json", function(data) {
 
             var newWordList = [];
 
