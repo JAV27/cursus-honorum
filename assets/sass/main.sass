@@ -73,6 +73,26 @@ div.body
                     margin-left: 100px
                 div.form
                     margin-left: 200px
+                div.wrong
+                    align-self: center
+                    display: flex
+                    justify-content: space-around
+                    margin-left: auto
+                    flex-grow: 1
+                    padding: 10%
+                    div
+                        background-color: #ff0000
+                        opacity: .1
+                        height: 80px
+                        width: 80px
+                        border-radius: 100px
+                        display: flex
+                        align-items: center
+                        justify-content: center
+                        span
+                            opacity: 1
+                            color: black
+                            font-size: 30px
             .gameFooter
                 border-top: 1px solid black
                 display: flex
@@ -84,11 +104,12 @@ div.body
                     width: 70%
                     line-height: 30px
                     font-size: 16px
-                div.submit
+                input.submit
                     line-height: 30px
                     box-sizing: padding-box
                     margin-left: 20px
                     background-color: #ccc
+                    border: 1px solid #ccc
                     cursor: pointer
                     padding: 3px
 .hide
