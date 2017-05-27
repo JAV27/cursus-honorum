@@ -33,20 +33,33 @@ $(document).ready(function() {
 
     var userScreen;
 
+    //Interface object
     function Interface() {
 
         this.points = 0;
         this.count = 1;
+        this.wrong = 0;
+
         $('.turnNumber').html(this.count + " out of 10");
         this.updatePoints = function() {
-            this.points+=100;
+            this.points+= 100 * (4-this.wrong);
             $('.points').html(this.points + " points");
         }
+
         this.updateTurn = function() {
             this.count++;
             $('.turnNumber').html(this.count + " out of 10");
         }
         this.fill = fillInterface;
+
+        this.resetWrongAnwers = function() {
+            this.wrong = 0;
+            $('div.wrongAnswer').css('opacity', '.1');
+        }
+
+        this.showAnswer = function() {
+            alert("The answer was " + $('input.submit').attr('id'));
+        }
 
     }
 
@@ -153,16 +166,33 @@ $(document).ready(function() {
         $('.points').html(userScreen.points + " points");
     });
 
-    //Compares user input to answer
-    $('div.submit').on('click', function() {
+    function submit() {
         var userInput = $('input').val().trim().toLowerCase();
-        if(userInput === $(this).attr('id').toLowerCase()) {
+        if(userInput === $('input.submit').attr('id').toLowerCase()) {
             alert('Correct!');
+            $('input[type="text"]').val("");
             userScreen.updatePoints();
             userScreen.updateTurn();
+            userScreen.resetWrongAnwers();
             userScreen.fill();
         } else {
-            alert('You should go down to honors');
+            $('input[type="text"]').val("");
+            $('div.wrongAnswer').eq(userScreen.wrong++).css('opacity', '1');
+            if(userScreen.wrong == 4) {
+                userScreen.showAnswer();
+                userScreen.updateTurn();
+                userScreen.fill();
+                userScreen.resetWrongAnwers();
+            }
+        }
+    }
+
+    //Compares user input to answer
+    $('input.submit').on('click', submit);
+    $('input[type="text"]').keypress(function(e) {
+        if(e.which == 13) {
+            submit();
         }
     });
+
 });
