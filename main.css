@@ -69,6 +69,26 @@ div.body {
           margin-left: 100px; }
         div.body .main .gameScreen .gameBody div.form {
           margin-left: 200px; }
+        div.body .main .gameScreen .gameBody div.wrong {
+          align-self: center;
+          display: flex;
+          justify-content: space-around;
+          margin-left: auto;
+          flex-grow: 1;
+          padding: 10%; }
+          div.body .main .gameScreen .gameBody div.wrong div {
+            background-color: #ff0000;
+            opacity: 0.1;
+            height: 80px;
+            width: 80px;
+            border-radius: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center; }
+            div.body .main .gameScreen .gameBody div.wrong div span {
+              opacity: 1;
+              color: black;
+              font-size: 30px; }
       div.body .main .gameScreen .gameFooter {
         border-top: 1px solid black;
         display: flex;
@@ -80,11 +100,12 @@ div.body {
           width: 70%;
           line-height: 30px;
           font-size: 16px; }
-        div.body .main .gameScreen .gameFooter div.submit {
+        div.body .main .gameScreen .gameFooter input.submit {
           line-height: 30px;
           box-sizing: padding-box;
           margin-left: 20px;
           background-color: #ccc;
+          border: 1px solid #ccc;
           cursor: pointer;
           padding: 3px; }
 
