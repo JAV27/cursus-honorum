@@ -1,4 +1,4 @@
 
 *.sassc
 
-.map
+**.css.map
