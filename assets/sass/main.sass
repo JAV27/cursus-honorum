@@ -3,13 +3,13 @@
 div.body
     border: 1px solid black
     width: 80vw
-    height: 70vh
+    height: $gameHeight
     margin-left: auto
     margin-right: auto
     box-sizing: border-box
     .header
-        height: 10%
-        padding: 10px
+        height: $headerHeight
+        @include borderBox(10px, 10px, 10px, 10px)
         text-align: right
         background-color: $mainColor
         p
@@ -17,50 +17,38 @@ div.body
             display: inline
             color: white
     .main
-        height: 80%
+        height: $gameHeight - $headerHeight
         .settings
             div.container
-                display: flex
-                flex-direction: row
+                @include fullFlex(row, default, default)
                 width: 100%
                 h3
                     width: 10%
                     font-size: 16px
                 div.options
-                    display: flex
-                    flex-direction: row
-                    align-items: center
+                    @include fullFlex(row, default, center)
                     p.option
                         margin-left: 60px
                         cursor: pointer
                         text-align: center
-                        box-sizing: border-box
-                        padding-bottom: 3px
-                        padding-left: 15px
-                        padding-right: 15px
-            p.exit
-                cursor: pointer
-                color: red
-                display: inline
+                        @include borderBox(0,15px,3px,15px)
         .startMenu
             div.playButton
                 cursor: pointer
         .gameScreen
-            height: 55vh
+            flex-direction: column
+            height: 60vh
             .gameHeader
-                display: flex
-                flex-direction: row
-                justify-content: space-between
-                height: 10%
-                padding: 20px
+                @include fullFlex(row, space-between, center)
                 border-bottom: 1px solid black
                 font-size: 18px
+                flex-grow: 1
+                @include borderBox(0, 20px, 0, 20px)
                 .clock
                     font-size: 24px
                     letter-spacing: 4px
             .gameBody
                 display: flex
-                height: 70%
                 h2
                     font-weight: normal
                     font-size: 24px
@@ -74,9 +62,8 @@ div.body
                 div.form
                     margin-left: 200px
                 div.wrong
+                    @include fullFlex(row, space-around, default)
                     align-self: center
-                    display: flex
-                    justify-content: space-around
                     margin-left: auto
                     flex-grow: 1
                     padding: 10%
@@ -86,31 +73,31 @@ div.body
                         height: 80px
                         width: 80px
                         border-radius: 100px
-                        display: flex
-                        align-items: center
-                        justify-content: center
+                        @include fullFlex(row, center, center)
                         span
                             opacity: 1
                             color: black
                             font-size: 30px
             .gameFooter
                 border-top: 1px solid black
-                display: flex
-                flex-direction: row
-                align-items: center
-                justify-content: center
-                padding-top: 25px
+                @include fullFlex(row, center, center)
+                flex-grow: 2
                 input[type="text"]
                     width: 70%
-                    line-height: 30px
                     font-size: 16px
+                    min-height: 35px
+                    box-sizing: border-box
                 input.submit
-                    line-height: 30px
-                    box-sizing: padding-box
                     margin-left: 20px
                     background-color: #ccc
                     border: 1px solid #ccc
                     cursor: pointer
-                    padding: 3px
+                    min-height: 35px
+                    @include borderBox(5px, 5px ,5px, 5px)
 .hide
     display: none
+
+p.exit
+    cursor: pointer
+    color: red
+    display: inline
