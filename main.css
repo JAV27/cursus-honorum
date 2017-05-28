@@ -6,8 +6,9 @@ div.body {
   margin-right: auto;
   box-sizing: border-box; }
   div.body .header {
-    height: 10%;
-    padding: 10px;
+    height: 10vh;
+    box-sizing: border-box;
+    padding: 10px 10px 10px 10px;
     text-align: right;
     background-color: #4d4dff; }
     div.body .header p {
@@ -15,10 +16,12 @@ div.body {
       display: inline;
       color: white; }
   div.body .main {
-    height: 80%; }
+    height: 60vh; }
     div.body .main .settings div.container {
       display: flex;
       flex-direction: row;
+      justify-content: flex-start;
+      align-items: stretch;
       width: 100%; }
       div.body .main .settings div.container h3 {
         width: 10%;
@@ -26,37 +29,34 @@ div.body {
       div.body .main .settings div.container div.options {
         display: flex;
         flex-direction: row;
+        justify-content: flex-start;
         align-items: center; }
         div.body .main .settings div.container div.options p.option {
           margin-left: 60px;
           cursor: pointer;
           text-align: center;
           box-sizing: border-box;
-          padding-bottom: 3px;
-          padding-left: 15px;
-          padding-right: 15px; }
-    div.body .main .settings p.exit {
-      cursor: pointer;
-      color: red;
-      display: inline; }
+          padding: 0 15px 3px 15px; }
     div.body .main .startMenu div.playButton {
       cursor: pointer; }
     div.body .main .gameScreen {
-      height: 55vh; }
+      flex-direction: column;
+      height: 60vh; }
       div.body .main .gameScreen .gameHeader {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        height: 10%;
-        padding: 20px;
+        align-items: center;
         border-bottom: 1px solid black;
-        font-size: 18px; }
+        font-size: 18px;
+        flex-grow: 1;
+        box-sizing: border-box;
+        padding: 0 20px 0 20px; }
         div.body .main .gameScreen .gameHeader .clock {
           font-size: 24px;
           letter-spacing: 4px; }
       div.body .main .gameScreen .gameBody {
-        display: flex;
-        height: 70%; }
+        display: flex; }
         div.body .main .gameScreen .gameBody h2 {
           font-weight: normal;
           font-size: 24px; }
@@ -70,9 +70,11 @@ div.body {
         div.body .main .gameScreen .gameBody div.form {
           margin-left: 200px; }
         div.body .main .gameScreen .gameBody div.wrong {
-          align-self: center;
           display: flex;
+          flex-direction: row;
           justify-content: space-around;
+          align-items: stretch;
+          align-self: center;
           margin-left: auto;
           flex-grow: 1;
           padding: 10%; }
@@ -83,8 +85,9 @@ div.body {
             width: 80px;
             border-radius: 100px;
             display: flex;
-            align-items: center;
-            justify-content: center; }
+            flex-direction: row;
+            justify-content: center;
+            align-items: center; }
             div.body .main .gameScreen .gameBody div.wrong div span {
               opacity: 1;
               color: black;
@@ -93,23 +96,29 @@ div.body {
         border-top: 1px solid black;
         display: flex;
         flex-direction: row;
-        align-items: center;
         justify-content: center;
-        padding-top: 25px; }
+        align-items: center;
+        flex-grow: 2; }
         div.body .main .gameScreen .gameFooter input[type="text"] {
           width: 70%;
-          line-height: 30px;
-          font-size: 16px; }
+          font-size: 16px;
+          min-height: 35px;
+          box-sizing: border-box; }
         div.body .main .gameScreen .gameFooter input.submit {
-          line-height: 30px;
-          box-sizing: padding-box;
           margin-left: 20px;
           background-color: #ccc;
           border: 1px solid #ccc;
           cursor: pointer;
-          padding: 3px; }
+          min-height: 35px;
+          box-sizing: border-box;
+          padding: 5px 5px 5px 5px; }
 
 .hide {
   display: none; }
+
+p.exit {
+  cursor: pointer;
+  color: red;
+  display: inline; }
 
 /*# sourceMappingURL=main.css.map */
