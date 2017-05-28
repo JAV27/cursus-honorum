@@ -12,6 +12,8 @@ $(document).ready(function() {
     //Hides the settings page and opens up the main page
     $(".exit").on('click', function() {
         settingsPage.hide();
+        $('div.finishScreen').hide();
+        $('p.settings').show();
         startMenuPage.show();
     });
 
@@ -37,19 +39,23 @@ $(document).ready(function() {
     function Interface() {
 
         this.points = 0;
-        this.count = 1;
+        this.turn = 1;
         this.wrong = 0;
 
-        $('.turnNumber').html(this.count + " out of 10");
+        $('.turnNumber').html(this.turn + " out of 10");
         this.updatePoints = function() {
             this.points+= 100 * (4-this.wrong);
             $('.points').html(this.points + " points");
         }
 
         this.updateTurn = function() {
-            this.count++;
-            $('.turnNumber').html(this.count + " out of 10");
+            if(this.turn == 10) {
+                showFinishScreen();
+            }
+            this.turn++;
+            $('.turnNumber').html(this.turn + " out of 10");
         }
+
         this.fill = fillInterface;
 
         this.resetWrongAnwers = function() {
@@ -160,7 +166,7 @@ $(document).ready(function() {
         //Shows the game screen
         startMenuPage.hide();
         $('p.settings').hide();
-        $("div.gameScreen").show();
+        $("div.gameScreen").css('display', 'flex');
         userScreen = new Interface();
         userScreen.fill();
         $('.points').html(userScreen.points + " points");
@@ -194,5 +200,10 @@ $(document).ready(function() {
             submit();
         }
     });
+
+    function showFinishScreen() {
+        $('div.gameScreen').hide();
+        $('div.finishScreen').show();
+    }
 
 });
