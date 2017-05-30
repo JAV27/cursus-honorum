@@ -1,22 +1,33 @@
 @import 'partials/variables'
 
-html
+html,body
     height: 100%
+    margin: 0
+    padding: 0
 
 body
-    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('colosseum.jpg')
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('assets/colosseum.jpg')
     background-size: cover
     background-position: center
     background-repeat: no-repeat
-
+footer
+    padding-bottom: 10px
+    font-size: 20px
+    i
+        margin-left: 20px
+        cursor: pointer
+div.mainBody
+    @include fullFlex(column,flex-end,default)
+    min-height: 100%
 div.mainScreen
     @include fullFlex(row, default, default)
-    height: 50vh
+    margin-top: 5%
     h1
         color: white
         font-family: fantasy
         font-size: 120px
         margin: 0
+        margin-left: 5%
     ul
         margin: 0
         color: white
@@ -30,7 +41,14 @@ div.mainScreen
             &:first-of-type
                 margin-top: 60px
             &:hover
-                color: lighten($grape, 10%)
+                color: lighten($grape, 30%)
+footer
+    margin-top: auto
+    color: white
+    width: 100%
+    text-align: center
+
+/////////////////////////////////////////////////////////////////
 div.body
     border: 1px solid black
     width: 80vw
