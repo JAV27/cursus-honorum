@@ -1,3 +1,7 @@
+// TODO: Make a leaderboard
+// TODO: Tidy up finish screen
+
+
 $(document).ready(function() {
 
     var settingsPage = $('div.settings');

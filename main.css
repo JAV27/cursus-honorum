@@ -1,3 +1,38 @@
+html {
+  height: 100%; }
+
+body {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("colosseum.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; }
+
+div.mainScreen {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  height: 50vh; }
+  div.mainScreen h1 {
+    color: white;
+    font-family: fantasy;
+    font-size: 120px;
+    margin: 0; }
+  div.mainScreen ul {
+    margin: 0;
+    color: white;
+    margin-left: auto;
+    margin-right: 10%;
+    list-style-type: none; }
+    div.mainScreen ul li {
+      font-size: 34px;
+      margin-top: 100px;
+      cursor: pointer; }
+      div.mainScreen ul li:first-of-type {
+        margin-top: 60px; }
+      div.mainScreen ul li:hover {
+        color: #844587; }
+
 div.body {
   border: 1px solid black;
   width: 80vw;
