@@ -1,99 +1,260 @@
 @import 'partials/variables'
 
+html,body
+    height: 100%
+    margin: 0
+    padding: 0
+
+body
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('assets/colosseum.jpg')
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
+footer
+    padding-bottom: 10px
+    font-size: 20px
+    i
+        margin-left: 20px
+        cursor: pointer
 div.body
-    border: 1px solid black
-    width: 80vw
-    height: $gameHeight
-    margin-left: auto
-    margin-right: auto
-    box-sizing: border-box
-    .header
-        height: $headerHeight
-        @include borderBox(10px, 10px, 10px, 10px)
-        text-align: right
-        background-color: $mainColor
-        p
-            cursor: pointer
-            display: inline
+    @include fullFlex(column,flex-end,default)
+    min-height: 100%
+    div.mainScreen
+        @include fullFlex(row, default, default)
+        margin-top: 5%
+        h1
             color: white
-    .main
-        height: $gameHeight - $headerHeight
-        .settings
-            div.container
-                @include fullFlex(row, default, default)
-                width: 100%
-                h3
-                    width: 10%
-                    font-size: 16px
-                div.options
-                    @include fullFlex(row, default, center)
-                    p.option
-                        margin-left: 60px
-                        cursor: pointer
-                        text-align: center
-                        @include borderBox(0,15px,3px,15px)
-        .startMenu
-            div.playButton
+            font-family: fantasy
+            font-size: 120px
+            margin: 0
+            margin-left: 5%
+        ul
+            margin: 0
+            color: white
+            margin-left: auto
+            margin-right: 10%
+            list-style-type: none
+            @include fullFlex(column, default, flex-start)
+            li
+                font-size: 34px
+                margin-top: 100px
                 cursor: pointer
-        .gameScreen
-            flex-direction: column
-            height: 60vh
-            .gameHeader
-                @include fullFlex(row, space-between, center)
-                border-bottom: 1px solid black
+                padding: 0 10px 0 10px
+                &:first-of-type
+                    margin-top: 60px
+                &:hover
+                    color: lighten($grape, 30%)
+    div.gameScreen, div.settingsScreen, div.finishScreen
+        border: 2px solid $lightgrey
+        width: 65vw
+        margin-top: auto
+        margin-left: auto
+        margin-right: auto
+        height: 55vh
+        flex-direction: column
+        color: white
+        background-color: $grape
+        opacity: .9
+        border-radius: 10px
+        div.gameHeader
+            @include fullFlex(row, space-around, center)
+            font-size: 24px
+            border-bottom: 1px solid $lightgrey
+            flex-grow: 1
+        div.gameBody
+            @include fullFlex(row, space-around, default)
+            flex-grow: 4
+            h2
+                font-weight: normal
+                text-decoration: underline
+            ul
+                list-style-type: none
+                padding-left: 0
+                li
+                    font-size: 20px
+                    padding: 5px
+            div.wrong
+                @include fullFlex(row, space-around, center)
+                div
+                    @include fullFlex(row, center, center)
+                    margin-left: 40px
+                    background-color: $lightgrey
+                    color: black
+                    border-radius: 100px
+                    width: 60px
+                    height: 60px
+                    opacity: .1
+                    box-shadow: none
+                    font-size: 24px
+        div.gameFooter
+            flex-grow: 2
+            border-top: 1px solid $lightgrey
+            @include fullFlex(row, center, center)
+            input[type="text"]
+                width: 70%
+                font-size: 16px
+                min-height: 35px
+                box-sizing: border-box
+            input[type="submit"]
+                margin-left: 20px
+                background-color: $lightgrey
+                border: 1px solid $lightgrey
+                cursor: pointer
+                min-height: 35px
+                @include borderBox(5px, 5px ,5px, 5px)
+                font-size: 16px
+            div.quit
+                margin-right: 20px
+                color: $lightgrey
+                cursor: pointer
+                letter-spacing: 2px
+    div.settingsScreen
+        div.settingsHeader
+            padding: 15px
+            border-bottom: 1px solid $lightgrey
+            i
+                cursor: pointer
+                transition: transform 300ms ease-in-out
+                &:hover
+                    transform: translateX(-5px)
+        div.settingsBody
+            @include fullFlex(row, space-around, default)
+            h2
+                font-weight: normal
+                text-decoration: underline
+            ul
+                list-style-type: none
+                padding: 0
                 font-size: 18px
-                flex-grow: 1
-                @include borderBox(0, 20px, 0, 20px)
-                .clock
-                    font-size: 24px
-                    letter-spacing: 4px
-            .gameBody
-                display: flex
-                h2
-                    font-weight: normal
-                    font-size: 24px
-                ul
-                    list-style-type: none
-                    li
-                        padding: 5px
-                        font-size: 18px
-                div.principleParts
-                    margin-left: 100px
-                div.form
-                    margin-left: 200px
-                div.wrong
-                    @include fullFlex(row, space-around, default)
-                    align-self: center
-                    margin-left: auto
-                    flex-grow: 1
-                    padding: 10%
-                    div
-                        background-color: #ff0000
-                        opacity: .1
-                        height: 80px
-                        width: 80px
-                        border-radius: 100px
-                        @include fullFlex(row, center, center)
-                        span
-                            opacity: 1
-                            color: black
-                            font-size: 30px
-            .gameFooter
-                border-top: 1px solid black
-                @include fullFlex(row, center, center)
-                flex-grow: 2
-                input[type="text"]
-                    width: 70%
-                    font-size: 16px
-                    min-height: 35px
-                    box-sizing: border-box
-                input.submit
-                    margin-left: 20px
-                    background-color: #ccc
-                    border: 1px solid #ccc
-                    cursor: pointer
-                    min-height: 35px
-                    @include borderBox(5px, 5px ,5px, 5px)
+                li
+                    padding-bottom: 10px
+                    label
+                        cursor: pointer
+    div.finishScreen
+        h2
+            font-family: fantasy
+            font-size: 30px
+            text-align: center
+        div.back
+            width: 25%
+            padding: 20px 10px 20px 10px
+            border-radius: 5px
+            text-align: center
+            margin: auto
+            cursor: pointer
+            border: 2px solid $lightgrey
+            background-color: $grape
+            color: $lightgrey
+            &:hover
+                background-color: $lightgrey
+                color: $grape
+    footer
+        margin-top: auto
+        color: white
+        width: 100%
+        text-align: center
+
+
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+// div.body
+//     border: 1px solid black
+//     width: 80vw
+//     height: $gameHeight
+//     margin-left: auto
+//     margin-right: auto
+//     box-sizing: border-box
+//     margin-top: 20px
+//     .header
+//         height: $headerHeight
+//         @include borderBox(10px, 10px, 10px, 10px)
+//         text-align: right
+//         background-color: $mainColor
+//         p
+//             cursor: pointer
+//             display: inline
+//             color: white
+//     .main
+//         height: $gameHeight - $headerHeight
+//         .settings
+//             div.container
+//                 @include fullFlex(row, default, default)
+//                 width: 100%
+//                 h3
+//                     width: 10%
+//                     font-size: 16px
+//                 div.options
+//                     @include fullFlex(row, default, center)
+//                     p.option
+//                         margin-left: 60px
+//                         cursor: pointer
+//                         text-align: center
+//                         @include borderBox(0,15px,3px,15px)
+//         .gameScreen
+//             display: flex
+//             flex-direction: column
+//             height: 60vh
+//             .gameHeader
+//                 @include fullFlex(row, space-between, center)
+//                 border-bottom: 1px solid black
+//                 font-size: 18px
+//                 flex-grow: 1
+//                 @include borderBox(0, 20px, 0, 20px)
+//                 .clock
+//                     font-size: 24px
+//                     letter-spacing: 4px
+//             .gameBody
+//                 display: flex
+//                 h2
+//                     font-weight: normal
+//                     font-size: 24px
+//                 ul
+//                     list-style-type: none
+//                     li
+//                         padding: 5px
+//                         font-size: 18px
+//                 div.principleParts
+//                     margin-left: 100px
+//                 div.form
+//                     margin-left: 200px
+//                 div.wrong
+//                     @include fullFlex(row, space-around, default)
+//                     align-self: center
+//                     margin-left: auto
+//                     flex-grow: 1
+//                     padding: 10%
+//                     div
+//                         background-color: #ff0000
+//                         opacity: .1
+//                         height: 80px
+//                         width: 80px
+//                         border-radius: 100px
+//                         @include fullFlex(row, center, center)
+//                         span
+//                             opacity: 1
+//                             color: black
+//                             font-size: 30px
+//             .gameFooter
+//                 border-top: 1px solid black
+//                 @include fullFlex(row, center, center)
+//                 flex-grow: 2
+//                 input[type="text"]
+//                     width: 70%
+//                     font-size: 16px
+//                     min-height: 35px
+//                     box-sizing: border-box
+//                 input.submit
+//                     margin-left: 20px
+//                     background-color: #ccc
+//                     border: 1px solid #ccc
+//                     cursor: pointer
+//                     min-height: 35px
+//                     @include borderBox(5px, 5px ,5px, 5px)
 .hide
     display: none
 

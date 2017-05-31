@@ -1,28 +1,5 @@
 $(document).ready(function() {
 
-    var settingsPage = $('div.settings');
-    var startMenuPage = $('div.startMenu');
-
-    //Hides the main page and opens up the settings page
-    $("p.settings").on('click', function() {
-        settingsPage.show();
-        startMenuPage.hide();
-    });
-
-    //Hides the settings page and opens up the main page
-    $(".exit").on('click', function() {
-        settingsPage.hide();
-        $('div.finishScreen').hide();
-        $('p.settings').show();
-        startMenuPage.show();
-    });
-
-    //Triggers: When option in the settings is clicked
-    //Adds a class which underlines the option
-    $('p.option').on('click', function() {
-        $(this).toggleClass('clk-underline-from-center');
-    });
-
     //To store the user preference settings
     var settings = [
         [], [], [], [], []
@@ -60,7 +37,7 @@ $(document).ready(function() {
 
         this.resetWrongAnwers = function() {
             this.wrong = 0;
-            $('div.wrongAnswer').css('opacity', '.1');
+            $('div.wrongAnswer').css({'opacity': '.1', 'box-shadow': 'none'});
         }
 
         this.showAnswer = function() {
@@ -89,7 +66,7 @@ $(document).ready(function() {
             $('.pp1').html(randomWord.pp1 + ",");
             $('.inf').html(randomWord.inf + ",");
             $('.pp3').html(randomWord.pp3 + ",");
-            $('.pp4').html(randomWord.pp4 + ",");
+            $('.pp4').html(randomWord.pp4);
 
             setForm();
             getChart(randomWord, voice, tense);
@@ -115,10 +92,10 @@ $(document).ready(function() {
         var numberIndex = Math.floor(Math.random() * numberSettings.length);
         number = numberSettings[numberIndex];
 
-        $('.voice').html(voice);
-        $('.tense').html(tense);
-        $('.person').html(person);
-        $('.number').html(number);
+        $('li.voice').html(voice);
+        $('li.tense').html(tense);
+        $('li.person').html(person);
+        $('li.number').html(number);
 
         //needed to run getChart() properly
         if(number === "Singular") {
@@ -132,7 +109,7 @@ $(document).ready(function() {
     }
 
     //Triggers: When the play button is clicked on the main screen
-    $('div.playButton').on('click', function() {
+    $('li.play').on('click', function() {
 
         //Loop through each settings row
         for(var i=0; i<5; i++) {
@@ -144,8 +121,8 @@ $(document).ready(function() {
             //For each setting row
             //Find the options which have the class that marks it as a clicked option
             //And push it to the corresponding subarray in the settings array
-            $('div.options').eq(i).children('.clk-underline-from-center').each(function() {
-                settings[i].push($(this).text());
+            $('div.option').eq(i).children('ul').children('li').children().children('input:checked').each(function() {
+                settings[i].push($(this).val());
             });
         }
 
@@ -164,14 +141,14 @@ $(document).ready(function() {
 
         //Hides the main page, settings button in the header
         //Shows the game screen
-        startMenuPage.hide();
-        $('p.settings').hide();
+        $('div.mainScreen').hide();
         $("div.gameScreen").css('display', 'flex');
         userScreen = new Interface();
         userScreen.fill();
         $('.points').html(userScreen.points + " points");
     });
 
+    //Compares user input to the answer
     function submit() {
         var userInput = $('input').val().trim().toLowerCase();
         if(userInput === $('input.submit').attr('id').toLowerCase()) {
@@ -183,7 +160,7 @@ $(document).ready(function() {
             userScreen.fill();
         } else {
             $('input[type="text"]').val("");
-            $('div.wrongAnswer').eq(userScreen.wrong++).css('opacity', '1');
+            $('div.wrongAnswer').eq(userScreen.wrong++).css({'opacity':'1', 'box-shadow': '3px 3px 3px -1px black'});
             if(userScreen.wrong == 4) {
                 userScreen.showAnswer();
                 userScreen.updateTurn();
@@ -193,8 +170,8 @@ $(document).ready(function() {
         }
     }
 
-    //Compares user input to answer
     $('input.submit').on('click', submit);
+    //Simulates a button press when the 'enter' key is pressed
     $('input[type="text"]').keypress(function(e) {
         if(e.which == 13) {
             submit();
@@ -203,7 +180,37 @@ $(document).ready(function() {
 
     function showFinishScreen() {
         $('div.gameScreen').hide();
-        $('div.finishScreen').show();
+        $('div.finishScreen').css('display', 'flex');
+        $('div.finishScreen h2').html("You got " + userScreen.points + " Points!");
     }
+
+    $('li.settings').on('click', function() {
+        $('div.mainScreen').hide();
+        $('div.settingsScreen').css('display', 'flex');
+    });
+
+    $('i.fa-arrow-left').on('click', function() {
+        $('div.settingsScreen').hide();
+        $('div.mainScreen').css('display', 'flex');
+    });
+
+    $('div.quit').on('click', function() {
+        if(window.confirm('Are you sure? Your game data will not be saved.')) {
+            userScreen.resetWrongAnwers();
+            userScreen.points = 0;
+            userScreen.turn = 1;
+            $('div.gameScreen').hide();
+            $('div.mainScreen').show();
+        }
+    });
+
+    $('.fa-github').on('click', function() {
+        window.location.href = "https://github.com/JAV27";
+    });
+
+    $('div.back').on('click', function() {
+        $('div.finishScreen').hide();
+        $('div.mainScreen').css('display', 'flex');
+    });
 
 });

@@ -274,15 +274,15 @@
   vertical-align: middle;
   -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
-  box-shadow: 0 0 1px transparent;
+  box-shadow: 0 0 3px transparent;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
   -webkit-transition-property: transform;
   transition-property: transform;
 }
 .hvr-grow-rotate:hover, .hvr-grow-rotate:focus, .hvr-grow-rotate:active {
-  -webkit-transform: scale(1.1) rotate(4deg);
-  transform: scale(1.1) rotate(4deg);
+  -webkit-transform: scale(1.1) rotate(8deg);
+  transform: scale(1.1) rotate(8deg);
 }
 
 /* Float */
@@ -2172,7 +2172,6 @@
 
 /* Underline From Center */
 .hvr-underline-from-center {
-  display: inline-block;
   vertical-align: middle;
   -webkit-transform: perspective(5px) translateZ(0);
   transform: perspective(5px) translateZ(0);
@@ -2187,7 +2186,7 @@
   left: 50%;
   right: 50%;
   bottom: 0;
-  background: #2098D1;
+  background: #b778ba;
   height: 4px;
   -webkit-transition-property: left, right;
   transition-property: left, right;
@@ -2332,13 +2331,13 @@
 
 /* Reveal */
 .hvr-reveal {
-  display: inline-block;
   vertical-align: middle;
   -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
   box-shadow: 0 0 1px transparent;
   position: relative;
   overflow: hidden;
+  text-align: center;
 }
 .hvr-reveal:before {
   content: "";
@@ -2348,7 +2347,7 @@
   right: 0;
   top: 0;
   bottom: 0;
-  border-color: #2098D1;
+  border-color: #b778ba;
   border-style: solid;
   border-width: 0;
   -webkit-transition-property: border-width;
@@ -2861,21 +2860,15 @@
 /* ICONS */
 /* Icon Back */
 .hvr-icon-back {
-  display: inline-block;
-  vertical-align: middle;
   -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
   box-shadow: 0 0 1px transparent;
-  position: relative;
-  padding-left: 2.2em;
   -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
 }
 .hvr-icon-back:before {
   content: "\f137";
   position: absolute;
-  left: 1em;
-  padding: 0 1px;
   font-family: FontAwesome;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);

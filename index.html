@@ -6,123 +6,117 @@
         <script src="main.js" type="text/javascript"></script>
         <link rel="stylesheet" href="main.css">
         <link rel="stylesheet" href="assets/hover.css" media="all">
+        <link rel="stylesheet" href="assets/font-awesome.min.css">
+        <title>Cursus Honorum</title>
     </head>
     <body>
-        <h1>Cursus Honorum</h1>
         <div class="body">
-            <div class="header">
-                <p class="settings">settings</p>
+            <div class="mainScreen">
+                <h1>Cursus <br> Honorum</h1>
+                <ul class="gameOptions">
+                    <li class="play">Play</li>
+                    <li class="settings">Settings</li>
+                    <li class="leaderboard">Leaderboard</li>
+                </ul>
             </div>
-            <div class="main">
-                <div class="settings hide">
-                    <h1>settings</h1>
-                    <div class="conjugation">
-                        <div class="container">
-                            <h3>conjugation:</h3>
-                            <div class="options">
-                                <p class="option hvr-underline-from-center clk-underline-from-center">1</p>
-                                <p class="option hvr-underline-from-center clk-underline-from-center">2</p>
-                                <p class="option hvr-underline-from-center clk-underline-from-center">3</p>
-                                <p class="option hvr-underline-from-center clk-underline-from-center">3io</p>
-                                <p class="option hvr-underline-from-center clk-underline-from-center">4</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="voiceOptions">
-                        <div class="container">
-                            <h3>voice:</h3>
-                            <div class="options">
-                                <p class="option hvr-underline-from-center clk-underline-from-center">Active</p>
-                                <p class="option hvr-underline-from-center clk-underline-from-center">Passive</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tenseOptions">
-                        <div class="container">
-                            <h3>tense:</h3>
-                            <div class="options">
-                                <p class="option hvr-underline-from-center clk-underline-from-center">Present</p>
-                                <p class="option hvr-underline-from-center clk-underline-from-center">Imperfect</p>
-                                <p class="option hvr-underline-from-center clk-underline-from-center">Future</p>
-                                <p class="option hvr-underline-from-center clk-underline-from-center">Perfect</p>
-                                <p class="option hvr-underline-from-center clk-underline-from-center">Plu Perfect</p>
-                                <p class="option hvr-underline-from-center clk-underline-from-center">Future Perfect</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="personOptions">
-                        <div class="container">
-                            <h3>person:</h3>
-                            <div class="options">
-                                <p class="option hvr-underline-from-center clk-underline-from-center">1st Person</p>
-                                <p class="option hvr-underline-from-center clk-underline-from-center">2nd Person</p>
-                                <p class="option hvr-underline-from-center clk-underline-from-center">3rd Person</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="numberOptions">
-                        <div class="container">
-                            <h3>number:</h3>
-                            <div class="options">
-                                <p class="option hvr-underline-from-center clk-underline-from-center">Singular</p>
-                                <p class="option hvr-underline-from-center clk-underline-from-center">Plural</p>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="exit">exit</p>
+            <div class="gameScreen hide">
+                <div class="gameHeader">
+                    <div class="points"></div>
+                    <div class="clock">01:00</div>
+                    <div class="turnNumber"></div>
                 </div>
-                <div class="startMenu">
-                    <div class="playButton">
-                        Play
+                <div class="gameBody">
+                    <div class="principleParts">
+                        <h2>Principal Parts</h2>
+                        <ul>
+                            <li class="pp1"></li>
+                            <li class="inf"></li>
+                            <li class="pp3"></li>
+                            <li class="pp4"></li>
+                        </ul>
+                    </div>
+                    <div class="form">
+                        <h2>Form</h2>
+                        <ul>
+                            <li class="voice"></li>
+                            <li class="tense"></li>
+                            <li class="person"></li>
+                            <li class="number"></li>
+                        </ul>
+                    </div>
+                    <div class="wrong">
+                        <div class="wrongAnswer"><span>X</span></div>
+                        <div class="wrongAnswer"><span>X</span></div>
+                        <div class="wrongAnswer"><span>X</span></div>
                     </div>
                 </div>
-                <div class="gameScreen hide">
-                    <div class="gameHeader">
-                        <div class="points"></div>
-                        <div class="clock">01:00</div>
-                        <div class="turnNumber"></div>
-                    </div>
-                    <div class="gameBody">
-                        <div class="principleParts">
-                            <h2>Principle Parts:</h2>
-                            <ul>
-                                <li class="pp1"></li>
-                                <li class="inf"></li>
-                                <li class="pp3"></li>
-                                <li class="pp4"></li>
-                            </ul>
-                        </div>
-                        <div class="form">
-                            <h2>Form:</h2>
-                            <ul>
-                                <li class="voice"></li>
-                                <li class="tense"></li>
-                                <li class="person"></li>
-                                <li class="number"></li>
-                            </ul>
-                        </div>
-                        <div class="wrong">
-                            <div class="wrongAnswer">
-                                <span>X</span>
-                            </div>
-                            <div class="wrongAnswer">
-                                <span>X</span>
-                            </div>
-                            <div class="wrongAnswer">
-                                <span>X</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gameFooter">
-                        <input type="text" placeholder="Answer Here">
-                        <input type="submit" class="submit" value="Answer">
-                    </div>
-                </div>
-                <div class="finishScreen hide">
-                    Great Game
-                    <p class="exit">exit</p>
+                <div class="gameFooter">
+                    <div class="quit">Quit</div>
+                    <input type="text" placeholder="Answer Here">
+                    <input type="submit" class="submit" value="Answer">
                 </div>
             </div>
+            <div class="finishScreen hide">
+                <h2 class="finishPoints"></h2>
+                <div class="back">
+                    Go Back To The Home Screen
+                </div>
+            </div>
+            <div class="settingsScreen hide">
+                <div class="settingsHeader">
+                    <i class="fa fa-arrow-left fa-2x" aria-hidden="true"></i>
+                </div>
+                <div class="settingsBody">
+                    <div class="conjugation option">
+                        <h2>Conjugation</h2>
+                        <ul>
+                            <li><label><input type="checkbox" checked="true" value="1">1</label></li>
+                            <li><label><input type="checkbox" checked="true" value="2">2</label></li>
+                            <li><label><input type="checkbox" checked="true" value="3">3</label></li>
+                            <li><label><input type="checkbox" checked="true" value="3io">3io</label></li>
+                            <li><label><input type="checkbox" checked="true" value="4">4</label></li>
+                        </ul>
+                    </div>
+                    <div class="voice option">
+                        <h2>Voice</h2>
+                        <ul>
+                            <li><label><input type="checkbox" checked="true" value="Active">Active</label></li>
+                            <li><label><input type="checkbox" checked="true" value="Passive">Passive</label></li>
+                        </ul>
+                    </div>
+                    <div class="tense option">
+                        <h2>Tense</h2>
+                        <ul>
+                            <li><label><input type="checkbox" checked="true" value="Present">Present</label></li>
+                            <li><label><input type="checkbox" checked="true" value="Imperfect">Imperfect</label></li>
+                            <li><label><input type="checkbox" checked="true" value="Future">Future</label></li>
+                            <li><label><input type="checkbox" checked="true" value="Perfect">Perfect</label></li>
+                            <li><label><input type="checkbox" checked="true" value="Plu Perfect">Plu Perfect</label></li>
+                            <li><label><input type="checkbox" checked="true" value="Future Perfect">Future Perfect</label></li>
+                        </ul>
+                    </div>
+                    <div class="person option">
+                        <h2>Person</h2>
+                        <ul>
+                            <li><label><input type="checkbox" checked="true" value="1st Person">1st Person</label></li>
+                            <li><label><input type="checkbox" checked="true" value="2nd Person">2nd Person</label></li>
+                            <li><label><input type="checkbox" checked="true" value="3rd Person">3rd Person</label></li>
+                        </ul>
+                    </div>
+                    <div class="number option">
+                        <h2>Number</h2>
+                        <ul>
+                            <li><label><input type="checkbox" checked="true" value="Singular">Singular</label></li>
+                            <li><label><input type="checkbox" checked="true" value="Plural">Plural</label></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <footer>
+                Created by Josh Viktorov:
+                <i class="fa fa-github fa-2x hvr-bounce-in" aria-hidden="true"></i>
+                <i class="fa fa-envelope-o fa-2x hvr-bounce-in" aria-hidden="true"></i>
+            </footer>
         </div>
     </body>
 </html>
