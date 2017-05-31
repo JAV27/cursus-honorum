@@ -16,160 +16,156 @@ footer {
     margin-left: 20px;
     cursor: pointer; }
 
-div.mainBody {
+div.body {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: stretch;
   min-height: 100%; }
-
-div.mainScreen {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: stretch;
-  margin-top: 5%; }
-  div.mainScreen h1 {
-    color: white;
-    font-family: fantasy;
-    font-size: 120px;
-    margin: 0;
-    margin-left: 5%; }
-  div.mainScreen ul {
-    margin: 0;
-    color: white;
+  div.body div.mainScreen {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    margin-top: 5%; }
+    div.body div.mainScreen h1 {
+      color: white;
+      font-family: fantasy;
+      font-size: 120px;
+      margin: 0;
+      margin-left: 5%; }
+    div.body div.mainScreen ul {
+      margin: 0;
+      color: white;
+      margin-left: auto;
+      margin-right: 10%;
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start; }
+      div.body div.mainScreen ul li {
+        font-size: 34px;
+        margin-top: 100px;
+        cursor: pointer;
+        padding: 0 10px 0 10px; }
+        div.body div.mainScreen ul li:first-of-type {
+          margin-top: 60px; }
+        div.body div.mainScreen ul li:hover {
+          color: #b778ba; }
+  div.body div.gameScreen, div.body div.settingsScreen, div.body div.finishScreen {
+    border: 2px solid #ccc;
+    width: 65vw;
+    margin-top: auto;
     margin-left: auto;
-    margin-right: 10%;
-    list-style-type: none; }
-    div.mainScreen ul li {
-      font-size: 34px;
-      margin-top: 100px;
-      cursor: pointer; }
-      div.mainScreen ul li:first-of-type {
-        margin-top: 60px; }
-      div.mainScreen ul li:hover {
-        color: #b778ba; }
-
-footer {
-  margin-top: auto;
-  color: white;
-  width: 100%;
-  text-align: center; }
-
-div.body {
-  border: 1px solid black;
-  width: 80vw;
-  height: 70vh;
-  margin-left: auto;
-  margin-right: auto;
-  box-sizing: border-box; }
-  div.body .header {
-    height: 10vh;
-    box-sizing: border-box;
-    padding: 10px 10px 10px 10px;
-    text-align: right;
-    background-color: #4d4dff; }
-    div.body .header p {
-      cursor: pointer;
-      display: inline;
-      color: white; }
-  div.body .main {
-    height: 60vh; }
-    div.body .main .settings div.container {
+    margin-right: auto;
+    height: 55vh;
+    flex-direction: column;
+    color: white;
+    background-color: #633465;
+    opacity: 0.9;
+    border-radius: 10px; }
+    div.body div.gameScreen div.gameHeader, div.body div.settingsScreen div.gameHeader, div.body div.finishScreen div.gameHeader {
       display: flex;
       flex-direction: row;
-      justify-content: flex-start;
+      justify-content: space-around;
+      align-items: center;
+      font-size: 24px;
+      border-bottom: 1px solid #ccc;
+      flex-grow: 1; }
+    div.body div.gameScreen div.gameBody, div.body div.settingsScreen div.gameBody, div.body div.finishScreen div.gameBody {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
       align-items: stretch;
-      width: 100%; }
-      div.body .main .settings div.container h3 {
-        width: 10%;
-        font-size: 16px; }
-      div.body .main .settings div.container div.options {
+      flex-grow: 4; }
+      div.body div.gameScreen div.gameBody h2, div.body div.settingsScreen div.gameBody h2, div.body div.finishScreen div.gameBody h2 {
+        font-weight: normal;
+        text-decoration: underline; }
+      div.body div.gameScreen div.gameBody ul, div.body div.settingsScreen div.gameBody ul, div.body div.finishScreen div.gameBody ul {
+        list-style-type: none;
+        padding-left: 0; }
+        div.body div.gameScreen div.gameBody ul li, div.body div.settingsScreen div.gameBody ul li, div.body div.finishScreen div.gameBody ul li {
+          font-size: 20px;
+          padding: 5px; }
+      div.body div.gameScreen div.gameBody div.wrong, div.body div.settingsScreen div.gameBody div.wrong, div.body div.finishScreen div.gameBody div.wrong {
         display: flex;
         flex-direction: row;
-        justify-content: flex-start;
+        justify-content: space-around;
         align-items: center; }
-        div.body .main .settings div.container div.options p.option {
-          margin-left: 60px;
-          cursor: pointer;
-          text-align: center;
-          box-sizing: border-box;
-          padding: 0 15px 3px 15px; }
-    div.body .main .startMenu div.playButton {
-      cursor: pointer; }
-    div.body .main .gameScreen {
-      flex-direction: column;
-      height: 60vh; }
-      div.body .main .gameScreen .gameHeader {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 1px solid black;
-        font-size: 18px;
-        flex-grow: 1;
-        box-sizing: border-box;
-        padding: 0 20px 0 20px; }
-        div.body .main .gameScreen .gameHeader .clock {
-          font-size: 24px;
-          letter-spacing: 4px; }
-      div.body .main .gameScreen .gameBody {
-        display: flex; }
-        div.body .main .gameScreen .gameBody h2 {
-          font-weight: normal;
-          font-size: 24px; }
-        div.body .main .gameScreen .gameBody ul {
-          list-style-type: none; }
-          div.body .main .gameScreen .gameBody ul li {
-            padding: 5px;
-            font-size: 18px; }
-        div.body .main .gameScreen .gameBody div.principleParts {
-          margin-left: 100px; }
-        div.body .main .gameScreen .gameBody div.form {
-          margin-left: 200px; }
-        div.body .main .gameScreen .gameBody div.wrong {
+        div.body div.gameScreen div.gameBody div.wrong div, div.body div.settingsScreen div.gameBody div.wrong div, div.body div.finishScreen div.gameBody div.wrong div {
           display: flex;
           flex-direction: row;
-          justify-content: space-around;
-          align-items: stretch;
-          align-self: center;
-          margin-left: auto;
-          flex-grow: 1;
-          padding: 10%; }
-          div.body .main .gameScreen .gameBody div.wrong div {
-            background-color: #ff0000;
-            opacity: 0.1;
-            height: 80px;
-            width: 80px;
-            border-radius: 100px;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center; }
-            div.body .main .gameScreen .gameBody div.wrong div span {
-              opacity: 1;
-              color: black;
-              font-size: 30px; }
-      div.body .main .gameScreen .gameFooter {
-        border-top: 1px solid black;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        flex-grow: 2; }
-        div.body .main .gameScreen .gameFooter input[type="text"] {
-          width: 70%;
-          font-size: 16px;
-          min-height: 35px;
-          box-sizing: border-box; }
-        div.body .main .gameScreen .gameFooter input.submit {
-          margin-left: 20px;
+          justify-content: center;
+          align-items: center;
+          margin-left: 40px;
           background-color: #ccc;
-          border: 1px solid #ccc;
-          cursor: pointer;
-          min-height: 35px;
-          box-sizing: border-box;
-          padding: 5px 5px 5px 5px; }
+          color: black;
+          border-radius: 100px;
+          width: 60px;
+          height: 60px;
+          opacity: 0.1;
+          box-shadow: none;
+          font-size: 24px; }
+    div.body div.gameScreen div.gameFooter, div.body div.settingsScreen div.gameFooter, div.body div.finishScreen div.gameFooter {
+      flex-grow: 2;
+      border-top: 1px solid #ccc;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center; }
+      div.body div.gameScreen div.gameFooter input[type="text"], div.body div.settingsScreen div.gameFooter input[type="text"], div.body div.finishScreen div.gameFooter input[type="text"] {
+        width: 70%;
+        font-size: 16px;
+        min-height: 35px;
+        box-sizing: border-box; }
+      div.body div.gameScreen div.gameFooter input[type="submit"], div.body div.settingsScreen div.gameFooter input[type="submit"], div.body div.finishScreen div.gameFooter input[type="submit"] {
+        margin-left: 20px;
+        background-color: #ccc;
+        border: 1px solid #ccc;
+        cursor: pointer;
+        min-height: 35px;
+        box-sizing: border-box;
+        padding: 5px 5px 5px 5px;
+        font-size: 16px; }
+      div.body div.gameScreen div.gameFooter div.quit, div.body div.settingsScreen div.gameFooter div.quit, div.body div.finishScreen div.gameFooter div.quit {
+        margin-right: 20px;
+        color: #ccc;
+        cursor: pointer;
+        letter-spacing: 2px; }
+  div.body div.settingsScreen div.settingsHeader {
+    padding: 15px;
+    border-bottom: 1px solid #ccc; }
+    div.body div.settingsScreen div.settingsHeader i {
+      cursor: pointer;
+      transition: transform 300ms ease-in-out; }
+      div.body div.settingsScreen div.settingsHeader i:hover {
+        transform: translateX(-5px); }
+  div.body div.settingsScreen div.settingsBody {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: stretch; }
+    div.body div.settingsScreen div.settingsBody h2 {
+      font-weight: normal;
+      text-decoration: underline; }
+    div.body div.settingsScreen div.settingsBody ul {
+      list-style-type: none;
+      padding: 0;
+      font-size: 18px; }
+      div.body div.settingsScreen div.settingsBody ul li {
+        padding-bottom: 10px; }
+        div.body div.settingsScreen div.settingsBody ul li label {
+          cursor: pointer; }
+  div.body div.finishScreen h2 {
+    font-family: fantasy;
+    font-size: 30px;
+    text-align: center; }
+  div.body footer {
+    margin-top: auto;
+    color: white;
+    width: 100%;
+    text-align: center; }
 
 .hide {
   display: none; }
