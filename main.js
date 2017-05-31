@@ -16,7 +16,7 @@ $(document).ready(function() {
     function Interface() {
 
         this.points = 0;
-        this.turn = 8;
+        this.turn = 9;
         this.wrong = 0;
 
         $('.turnNumber').html(this.turn + " out of 10");
@@ -181,7 +181,7 @@ $(document).ready(function() {
     function showFinishScreen() {
         $('div.gameScreen').hide();
         $('div.finishScreen').css('display', 'flex');
-        $('div.finishScreen h2').append(userScreen.points + " Points!");
+        $('div.finishScreen h2').html("You got " + userScreen.points + " Points!");
     }
 
     $('li.settings').on('click', function() {
@@ -206,6 +206,11 @@ $(document).ready(function() {
 
     $('.fa-github').on('click', function() {
         window.location.href = "https://github.com/JAV27";
+    });
+
+    $('div.back').on('click', function() {
+        $('div.finishScreen').hide();
+        $('div.mainScreen').css('display', 'flex');
     });
 
 });

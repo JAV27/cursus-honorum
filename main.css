@@ -161,6 +161,19 @@ div.body {
     font-family: fantasy;
     font-size: 30px;
     text-align: center; }
+  div.body div.finishScreen div.back {
+    width: 25%;
+    padding: 20px 10px 20px 10px;
+    border-radius: 5px;
+    text-align: center;
+    margin: auto;
+    cursor: pointer;
+    border: 2px solid #ccc;
+    background-color: #633465;
+    color: #ccc; }
+    div.body div.finishScreen div.back:hover {
+      background-color: #ccc;
+      color: #633465; }
   div.body footer {
     margin-top: auto;
     color: white;
