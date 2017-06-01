@@ -44,6 +44,15 @@ $(document).ready(function() {
             alert("The answer was " + $('input.submit').attr('id'));
         }
 
+        this.nextTurn = function(correct) {
+            if(correct) {
+                this.updatePoints();
+            }
+            this.updateTurn();
+            this.resetWrongAnwers();
+            this.fill();
+        }
+
     }
 
     //Fills out verb into html and calls setForm
@@ -154,18 +163,13 @@ $(document).ready(function() {
         if(userInput === $('input.submit').attr('id').toLowerCase()) {
             alert('Correct!');
             $('input[type="text"]').val("");
-            userScreen.updatePoints();
-            userScreen.updateTurn();
-            userScreen.resetWrongAnwers();
-            userScreen.fill();
+            userScreen.nextTurn(true);
         } else {
             $('input[type="text"]').val("");
             $('div.wrongAnswer').eq(userScreen.wrong++).css({'opacity':'1', 'box-shadow': '3px 3px 3px -1px black'});
             if(userScreen.wrong == 4) {
                 userScreen.showAnswer();
-                userScreen.updateTurn();
-                userScreen.fill();
-                userScreen.resetWrongAnwers();
+                userScreen.nextTurn(false);
             }
         }
     }
@@ -211,6 +215,11 @@ $(document).ready(function() {
     $('div.back').on('click', function() {
         $('div.finishScreen').hide();
         $('div.mainScreen').css('display', 'flex');
+    });
+
+    $('li.leaderboard').on('click', function() {
+        $('div.mainScreen').hide();
+        $('div.leaderboard').show();
     });
 
 });

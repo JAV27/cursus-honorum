@@ -174,6 +174,44 @@ div.body {
     div.body div.finishScreen div.back:hover {
       background-color: #ccc;
       color: #633465; }
+  div.body div.leaderboard {
+    background-color: #633465;
+    width: 40vw;
+    margin: 5% auto 0 auto;
+    height: 80vh;
+    opacity: 0.9;
+    border-radius: 10px;
+    color: #ccc;
+    border: 2px solid #ccc; }
+    div.body div.leaderboard div.leaderboardHeader {
+      height: 5vh; }
+      div.body div.leaderboard div.leaderboardHeader h2 {
+        text-align: center;
+        text-decoration: underline; }
+    div.body div.leaderboard div.container {
+      height: 70vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: stretch; }
+      div.body div.leaderboard div.container div.item {
+        margin-left: 5%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid rgba(204, 204, 204, 0.5); }
+        div.body div.leaderboard div.container div.item:first-of-type {
+          font-weight: bold; }
+        div.body div.leaderboard div.container div.item div.title {
+          font-size: 20px;
+          min-width: 100px; }
+          div.body div.leaderboard div.container div.item div.title span {
+            font-weight: normal; }
+        div.body div.leaderboard div.container div.item div.name {
+          padding-right: 15%; }
+        div.body div.leaderboard div.container div.item div.score {
+          margin-right: 5%; }
   div.body footer {
     margin-top: auto;
     color: white;
