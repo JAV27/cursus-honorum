@@ -10,6 +10,7 @@ body
     background-size: cover
     background-position: center
     background-repeat: no-repeat
+    background-attachment: fixed
 footer
     padding-bottom: 10px
     font-size: 20px
@@ -131,7 +132,7 @@ div.body
                     label
                         cursor: pointer
     div.finishScreen
-        h2
+        h2.finishPoints
             font-family: fantasy
             font-size: 30px
             text-align: center
@@ -159,9 +160,13 @@ div.body
         border: 2px solid $lightgrey
         div.leaderboardHeader
             height: 5vh
-            h2
-                text-align: center
-                text-decoration: underline
+            border-bottom: 1px solid $lightgrey
+            padding: 10px 0 10px 15px
+            i
+                cursor: pointer
+                transition: transform 300ms ease-in-out
+                &:hover
+                    transform: translateX(-5px)
         div.container
             height: 70vh
             @include fullFlex(column, space-around, default)
@@ -185,7 +190,7 @@ div.body
         color: white
         width: 100%
         text-align: center
-        
+
 .hide
     display: none
 

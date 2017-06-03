@@ -16,7 +16,7 @@ $(document).ready(function() {
     function Interface() {
 
         this.points = 0;
-        this.turn = 1;
+        this.turn = 9;
         this.wrong = 0;
 
         $('.turnNumber').html(this.turn + " out of 10");
@@ -176,7 +176,7 @@ $(document).ready(function() {
 
     $('input.submit').on('click', submit);
     //Simulates a button press when the 'enter' key is pressed
-    $('input[type="text"]').keypress(function(e) {
+    $('input.enterAnswer').keypress(function(e) {
         if(e.which == 13) {
             submit();
         }
@@ -185,7 +185,10 @@ $(document).ready(function() {
     function showFinishScreen() {
         $('div.gameScreen').hide();
         $('div.finishScreen').css('display', 'flex');
-        $('div.finishScreen h2').html("You got " + userScreen.points + " Points!");
+        $('div.finishScreen h2.finishPoints').html("You got " + userScreen.points + " Points!");
+
+        addToDatabase();
+
     }
 
     $('li.settings').on('click', function() {
@@ -195,6 +198,7 @@ $(document).ready(function() {
 
     $('i.fa-arrow-left').on('click', function() {
         $('div.settingsScreen').hide();
+        $('div.leaderboard').hide();
         $('div.mainScreen').css('display', 'flex');
     });
 
@@ -221,5 +225,51 @@ $(document).ready(function() {
         $('div.mainScreen').hide();
         $('div.leaderboard').show();
     });
+
+    function addToDatabase() {
+
+        var database = firebase.database();
+        var leaders = database.ref().child('Leaders');
+        var record = false;
+
+        leaders.orderByChild('Score').limitToLast(13).on('child_added', snap => {
+            var score = snap.child('Score').val();
+            if(userScreen.points > score) {
+                record = true;
+            }
+        });
+
+        function addData() {
+
+            name = $('input.nameInput').val()
+            leaders.push({
+                Name: name,
+                Score: userScreen.points
+            })
+            $('div.onLeaderboard').html('Great Job!!');
+
+        }
+
+        if(record) {
+
+            var name;
+
+            console.log('working');
+
+            $('div.onLeaderboard').show();
+
+            $('input.nameSubmit').on('click', addData);
+
+            $('input.nameInput').keypress(function(e) {
+                if(e.which == 13) {
+                    addData();
+                }
+            });
+
+        }
+
+    }
+
+
 
 });

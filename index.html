@@ -2,6 +2,8 @@
 <html>
     <head>
         <script src="jquery-3.2.1.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase.js"></script>
+        <script type="text/javascript" src="assets/js/leaderboard.js"></script>
         <script src="assets/js/conjugate.js" type="text/javascript"></script>
         <script src="main.js" type="text/javascript"></script>
         <link rel="stylesheet" href="main.css">
@@ -12,7 +14,7 @@
     <body>
         <div class="body">
             <div class="mainScreen">
-                <h1>Cursus <br> Honorum</h1>
+                <h1 id="title">Cursus <br> Honorum</h1>
                 <ul class="gameOptions">
                     <li class="play">Play</li>
                     <li class="settings">Settings</li>
@@ -52,12 +54,19 @@
                 </div>
                 <div class="gameFooter">
                     <div class="quit">Quit</div>
-                    <input type="text" placeholder="Answer Here">
+                    <input type="text" class = "enterAnswer" placeholder="Answer Here">
                     <input type="submit" class="submit" value="Answer">
                 </div>
             </div>
             <div class="finishScreen hide">
                 <h2 class="finishPoints"></h2>
+                <div class="onLeaderboard hide">
+                    <div class="form">
+                        <h2>Congradulations: You have made it onto the leaderboard!</h2>
+                        <input type="text" class="nameInput" placeholder="Please enter your name here">
+                        <input type="submit" class="nameSubmit" value="Submit">
+                    </div>
+                </div>
                 <div class="back">
                     Go Back To The Home Screen
                 </div>
@@ -114,74 +123,9 @@
             </div>
             <div class="leaderboard hide">
                 <div class="leaderboardHeader">
-                    <h2>Leaderboard</h2>
+                    <i class="fa fa-arrow-left fa-2x" aria-hidden="true"></i>
                 </div>
                 <div class="container">
-                    <div class="item">
-                        <div class="title"><span class="number">1.</span> Dictator:</div>
-                        <div class="name">Josh Viktorov</div>
-                        <div class="score">5000 Points</div>
-                    </div>
-                    <div class="item">
-                        <div class="title">2. Consul:</div>
-                        <div class="name">Josh Viktorov</div>
-                        <div class="score">4600 Points</div>
-                    </div>
-                    <div class="item">
-                        <div class="title">3. Consul:</div>
-                        <div class="name">Josh Viktorov</div>
-                        <div class="score">4500 Points</div>
-                    </div>
-                    <div class="item">
-                        <div class="title">4. Censor:</div>
-                        <div class="name">Josh Viktorov</div>
-                        <div class="score">4440 Points</div>
-                    </div>
-                    <div class="item">
-                        <div class="title">5. Censor:</div>
-                        <div class="name">Josh Viktorov</div>
-                        <div class="score">4320 Points</div>
-                    </div>
-                    <div class="item">
-                        <div class="title">6. Praetor:</div>
-                        <div class="name">Josh Viktorov</div>
-                        <div class="score">4310 Points</div>
-                    </div>
-                    <div class="item">
-                        <div class="title">7. Praetor:</div>
-                        <div class="name">Josh Viktorov</div>
-                        <div class="score">4000 Points</div>
-                    </div>
-                    <div class="item">
-                        <div class="title">8. Praetor:</div>
-                        <div class="name">Josh Viktorov</div>
-                        <div class="score">3860 Points</div>
-                    </div>
-                    <div class="item">
-                        <div class="title">9. Praetor:</div>
-                        <div class="name">Josh Viktorov</div>
-                        <div class="score">3800 Points</div>
-                    </div>
-                    <div class="item">
-                        <div class="title">10. Praetor:</div>
-                        <div class="name">Josh Viktorov</div>
-                        <div class="score">3750 Points</div>
-                    </div>
-                    <div class="item">
-                        <div class="title">11. Praetor:</div>
-                        <div class="name">Josh Viktorov</div>
-                        <div class="score">3700 Points</div>
-                    </div>
-                    <div class="item">
-                        <div class="title">12. Praetor:</div>
-                        <div class="name">Josh Viktorov</div>
-                        <div class="score">3600 Points</div>
-                    </div>
-                    <div class="item">
-                        <div class="title">13. Praetor:</div>
-                        <div class="name">Josh Viktorov</div>
-                        <div class="score">3580 Points</div>
-                    </div>
                 </div>
             </div>
             <footer>
