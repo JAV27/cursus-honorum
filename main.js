@@ -16,7 +16,7 @@ $(document).ready(function() {
     function Interface() {
 
         this.points = 0;
-        this.turn = 9;
+        this.turn = 1;
         this.wrong = 0;
 
         $('.turnNumber').html(this.turn + " out of 10");
