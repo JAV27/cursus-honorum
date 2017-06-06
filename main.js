@@ -159,7 +159,7 @@ $(document).ready(function() {
 
     //Compares user input to the answer
     function submit() {
-        var userInput = $('input').val().trim().toLowerCase();
+        var userInput = $('input.enterAnswer').val().trim().toLowerCase();
         if(userInput === $('input.submit').attr('id').toLowerCase()) {
             alert('Correct!');
             $('input[type="text"]').val("");
