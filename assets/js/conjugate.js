@@ -21,7 +21,7 @@ function conjugate(word, person, number, voice, tense) {
 }
 
 //Takes in: A word object and the options needed to get the full chart
-function getChart(word, voice, tense) {
+function getChart(word, voice, tense, bool) {
 
     //Root word variables
     var inf = word.inf;
@@ -68,13 +68,13 @@ function getChart(word, voice, tense) {
                     passiveFutureConj(inf, conj);
                     break;
                 case "Perfect":
-                    passivePerfectConj(pp4);
+                    passivePerfectConj(pp4, bool);
                     break;
                 case "Plu Perfect":
-                    passivePluPerfectConj(pp4);
+                    passivePluPerfectConj(pp4, bool);
                     break;
                 case "Future Perfect":
-                    passiveFuturePerfectConj(pp4);
+                    passiveFuturePerfectConj(pp4, bool);
                     break;
                 default:
                     return null;
@@ -234,15 +234,29 @@ function passiveFutureConj(inf, conj) {
     }
 }
 
-function passivePerfectConj(pp4) {
-    fullChart = new chart(pp4, " sum", " es", " est", " sumus", " estis", " sunt");
+function passivePerfectConj(pp4, bool) {
+    if(bool) {
+        pluralPP4 = pp4.substring(0,pp4.length-2) + 'i';
+        fullChart = new chart(pluralPP4, "", "", "", " sumus", " estis", " sunt");
+    } else {
+        fullChart = new chart(pp4, " sum", " es", " est", "", "", "");
+    }
 }
 
-function passivePluPerfectConj(pp4) {
-    fullChart = new chart(pp4, " eram", " eras", " erat", " eramus", " eratis", " erant");
+function passivePluPerfectConj(pp4, bool) {
+    if(bool) {
+        pluralPP4 = pp4.substring(0,pp4.length-2) + 'i';
+        fullChart = new chart(pluralPP4, "", "", "", " eramus", " eratis", " erant");
+    } else {
+        fullChart = new chart(pp4, " eram", " eras", " erat", "", "", "");
+    }
 }
 
-function passiveFuturePerfectConj(pp4) {
-    fullChart = new chart(pp4, " ero", " eris", " erit", " erimus", " eritis", " erunt");
+function passiveFuturePerfectConj(pp4, bool) {
+    if(bool) {
+        pluralPP4 = pp4.substring(0,pp4.length-2) + 'i';
+        fullChart = new chart(pluralPP4, "", "", "", " erimus", " eritis", " erunt");
+    } else {
+        fullChart = new chart(pp4, " ero", " eris", " erit", "", "", "");
+    }
 }
-//

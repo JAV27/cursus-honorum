@@ -78,13 +78,15 @@ $(document).ready(function() {
             $('.pp4').html(randomWord.pp4);
 
             setForm();
-            getChart(randomWord, voice, tense);
+            getChart(randomWord, voice, tense, needPluralStem);
             var answer = conjugate(randomWord, person, number, voice, tense);
             $('.submit').attr('id', answer);
         });
     }
 
     var voice, person, number, tense;
+    var needPluralStem = false;
+
 
     //gets random settings and puts into html
     function setForm() {
@@ -105,6 +107,13 @@ $(document).ready(function() {
         $('li.tense').html(tense);
         $('li.person').html(person);
         $('li.number').html(number);
+
+        if(voice == "Passive" && number == "Plural") {
+            if(tense == "Perfect" || tense == "Plu Perfect" || tense == "Future Perfect") {
+                console.log('working');
+                needPluralStem = true;
+            }
+        }
 
         //needed to run getChart() properly
         if(number === "Singular") {
