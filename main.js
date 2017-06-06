@@ -16,12 +16,12 @@ $(document).ready(function() {
     function Interface() {
 
         this.points = 0;
-        this.turn = 1;
+        this.turn = 9;
         this.wrong = 0;
 
         $('.turnNumber').html(this.turn + " out of 10");
         this.updatePoints = function() {
-            this.points+= 100 * (4-this.wrong);
+            this.points+= 1000 * (4-this.wrong);
             $('.points').html(this.points + " points");
         }
 

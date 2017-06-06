@@ -186,6 +186,23 @@ div.body
             font-family: fantasy
             font-size: 30px
             text-align: center
+        div.onLeaderboard
+            div.form
+                text-align: center
+                input
+                    min-height: 30px
+                    font-size: 16px
+                    width: 50%
+                    &[type="submit"]
+                        background-color: $lightgrey
+                        border: 1px solid $lightgrey
+                        color: $grape
+                        width: auto
+                        cursor: pointer
+                        margin-left: 20px
+                        &:hover
+                            background-color: darken($lightgrey, 20%)
+                            border-color: darken($lightgrey, 20%)
         div.back
             width: 25%
             padding: 20px 10px 20px 10px
