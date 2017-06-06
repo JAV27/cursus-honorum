@@ -45,6 +45,56 @@ div.body
                     margin-top: 60px
                 &:hover
                     color: lighten($grape, 30%)
+    div.emailModal
+        background-color: white
+        border: 5px solid $grape
+        width: 55vw
+        margin: auto
+        min-height: 40vh
+        height: 50vh
+        padding-top: 20px
+        padding-bottom: 20px
+        box-sizing: border-box
+        transform: scale(.8)
+        transition: transform 750ms
+        transition-timing-function: cubic-bezier(0.55, 0.04, 0.37, 1.66)
+        &.scale
+            transform: scale(1)
+        p
+            display: inline
+            float: right
+            margin-top: 0
+            margin-right: 20px
+            color: darken($lightgrey, 30%)
+            font-size: 20px
+            cursor: pointer
+        span
+            display: block
+        div.label
+            display: block
+            margin-left: 10%
+            margin-top: 5px
+        input, textarea
+            border: 3px solid $grape
+            font-size: 16px
+            padding: 5px
+            resize: none
+            &:focus
+                border-color: lighten($grape, 30%)
+                outline: none
+        textarea
+            height: 150px
+        input
+            height: 15px
+            &[type="submit"]
+                height: 35px
+                border: none
+                background-color: lighten($grape, 30%)
+                cursor: pointer
+                color: white
+                margin-top: 10px
+                width: 100px
+                display: inline
     div.gameScreen, div.settingsScreen, div.finishScreen
         border: 2px solid $lightgrey
         width: 65vw

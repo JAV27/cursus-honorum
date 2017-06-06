@@ -226,6 +226,18 @@ $(document).ready(function() {
         $('div.leaderboard').show();
     });
 
+    $('.fa-envelope-o').on('click', function() {
+        $('div.mainScreen').hide();
+        $('div.settingsScreen').hide();
+        $('div.leaderboard').hide();
+        $('.emailModal').css({'display':'block', 'opacity':'0'}).animate({'opacity':'1'}, 1000).addClass('scale');
+    })
+
+    $('p.exitEmail').on('click', function() {
+        $('.emailModal').hide().removeClass('scale');
+        $('div.mainScreen').show();
+    })
+
     function addToDatabase() {
 
         var database = firebase.database();

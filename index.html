@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
     <head>
+        <meta name="referrer" content="origin">
         <script src="jquery-3.2.1.js"></script>
         <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase.js"></script>
         <script type="text/javascript" src="assets/js/leaderboard.js"></script>
@@ -20,6 +21,17 @@
                     <li class="settings">Settings</li>
                     <li class="leaderboard">Leaderboard</li>
                 </ul>
+            </div>
+            <div class="emailModal hide">
+                <p class="exitEmail">X</p>
+                <form action="https://formspree.io/joshviktorov27@gmail.com" method="POST">
+                    <div class="label"><span>Name:</span><input type="text" name="name"></div>
+                    <div class="label"><span>Email:</span><input type="email" name="_replyto"></div>
+                    <div class="label"><span>Message:</span><textarea name="message" cols="70"></textarea></div>
+                    <div class="label"><input type="submit" value="Send" class="hvr-glow"></div>
+                    <div class="label"><input type="hidden" name="_subject" value="Website contact"/></div>
+                    <div class="label"><input type="text" name="_gotcha" style="display:none"/></div>
+                </form>
             </div>
             <div class="gameScreen hide">
                 <div class="gameHeader">
