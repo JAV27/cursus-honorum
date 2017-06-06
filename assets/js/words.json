@@ -2,12 +2,39 @@
     "verbs": [
 
         {
-            "pp1": "curro",
-            "inf": "currere",
-            "pp3": "cucurri",
-            "pp4": "cursus",
-            "conj": "3",
-            "def": "to run"
+            "pp1": "adiuvo",
+            "inf": "adiuvare",
+            "pp3": "adiuvi",
+            "pp4": "adiutus",
+            "conj": "1",
+            "def": "to help"
+        },
+        
+        {
+            "pp1": "canto",
+            "inf": "cantare",
+            "pp3": "cantavi",
+            "pp4": "cantatus",
+            "conj": "1",
+            "def": "to sing"
+        },
+        
+        {
+            "pp1": "demonstro",
+            "inf": "demonstrare",
+            "pp3": "demonstravi",
+            "pp4": "demonstratus",
+            "conj": "1",
+            "def": "to show"
+        },
+        
+        {
+            "pp1": "praecipito",
+            "inf": "praecipitare",
+            "pp3": "praecipitavi",
+            "pp4": "praecipitatus",
+            "conj": "1",
+            "def": "to hurl"
         },
 
         {
