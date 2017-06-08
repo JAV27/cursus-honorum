@@ -140,7 +140,7 @@
             "pp1": "iacio",
             "inf": "iacere",
             "pp3": "ieci",
-            "pp4": "iectus",
+            "pp4": "iactus",
             "conj": "3io",
             "def": "to throw"
         },
@@ -175,8 +175,8 @@
         {
             "pp1": "accipio",
             "inf": "accipere",
-            "pp3": "accipi",
-            "pp4": "acciptus",
+            "pp3": "accepi",
+            "pp4": "acceptus",
             "conj": "3io",
             "def": "to recieve"
         },
@@ -194,7 +194,7 @@
             "pp1": "aperio",
             "inf": "aperire",
             "pp3": "aperui",
-            "pp4": "aperius",
+            "pp4": "apertus",
             "conj": "4",
             "def": "to open"
         },
