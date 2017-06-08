@@ -179,6 +179,51 @@
             "pp4": "acciptus",
             "conj": "3io",
             "def": "to recieve"
+        },
+
+        {
+            "pp1": "audio",
+            "inf": "audire",
+            "pp3": "audivi",
+            "pp4": "auditus",
+            "conj": "4",
+            "def": "to hear"
+        },
+
+        {
+            "pp1": "aperio",
+            "inf": "aperire",
+            "pp3": "aperui",
+            "pp4": "aperius",
+            "conj": "4",
+            "def": "to open"
+        },
+
+        {
+            "pp1": "custodio",
+            "inf": "custodire",
+            "pp3": "custodivi",
+            "pp4": "custoditus",
+            "conj": "4",
+            "def": "to gaurd"
+        },
+
+        {
+            "pp1": "invenio",
+            "inf": "invenire",
+            "pp3": "inveni",
+            "pp4": "inventus",
+            "conj": "4",
+            "def": "to find"
+        },
+
+        {
+            "pp1": "scio",
+            "inf": "scire",
+            "pp3": "scivi",
+            "pp4": "scitus",
+            "conj": "4",
+            "def": "to know"
         }
 
     ]
