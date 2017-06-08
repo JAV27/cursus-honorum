@@ -9,7 +9,7 @@
             "conj": "1",
             "def": "to help"
         },
-        
+
         {
             "pp1": "canto",
             "inf": "cantare",
@@ -18,7 +18,7 @@
             "conj": "1",
             "def": "to sing"
         },
-        
+
         {
             "pp1": "demonstro",
             "inf": "demonstrare",
@@ -27,7 +27,7 @@
             "conj": "1",
             "def": "to show"
         },
-        
+
         {
             "pp1": "praecipito",
             "inf": "praecipitare",
@@ -53,6 +53,42 @@
             "pp4": "visus",
             "conj": "2",
             "def": "to see"
+        },
+
+        {
+            "pp1": "moneo",
+            "inf": "monere",
+            "pp3": "monui",
+            "pp4": "monitus",
+            "conj": "2",
+            "def": "to warn"
+        },
+
+        {
+            "pp1": "doceo",
+            "inf": "docere",
+            "pp3": "docui",
+            "pp4": "doctus",
+            "conj": "2",
+            "def": "to teach"
+        },
+
+        {
+            "pp1": "commoveo",
+            "inf": "commovere",
+            "pp3": "commovi",
+            "pp4": "commotus",
+            "conj": "2",
+            "def": "to move"
+        },
+
+        {
+            "pp1": "absorbeo",
+            "inf": "absorbere",
+            "pp3": "absorbui",
+            "pp4": "absorptus",
+            "conj": "2",
+            "def": "to swallow down"
         }
 
     ]
