@@ -112,7 +112,11 @@ $(document).ready(function() {
             if(tense == "Perfect" || tense == "Plu Perfect" || tense == "Future Perfect") {
                 console.log('working');
                 needPluralStem = true;
+            } else {
+                needPluralStem = false;
             }
+        } else {
+            needPluralStem = false;
         }
 
         //needed to run getChart() properly
