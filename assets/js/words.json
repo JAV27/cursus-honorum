@@ -134,6 +134,51 @@
             "pp4": "offensus",
             "conj": "3",
             "def": "to hit"
+        },
+
+        {
+            "pp1": "iacio",
+            "inf": "iacere",
+            "pp3": "ieci",
+            "pp4": "iectus",
+            "conj": "3io",
+            "def": "to throw"
+        },
+
+        {
+            "pp1": "capio",
+            "inf": "capere",
+            "pp3": "cepi",
+            "pp4": "ceptus",
+            "conj": "3io",
+            "def": "to seize"
+        },
+
+        {
+            "pp1": "cupio",
+            "inf": "cupere",
+            "pp3": "cupivi",
+            "pp4": "cupitus",
+            "conj": "3io",
+            "def": "to long for"
+        },
+
+        {
+            "pp1": "rapio",
+            "inf": "rapere",
+            "pp3": "rapui",
+            "pp4": "raptus",
+            "conj": "3io",
+            "def": "to drag off"
+        },
+
+        {
+            "pp1": "accipio",
+            "inf": "accipere",
+            "pp3": "accipi",
+            "pp4": "acciptus",
+            "conj": "3io",
+            "def": "to recieve"
         }
 
     ]
