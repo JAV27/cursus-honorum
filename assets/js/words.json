@@ -89,6 +89,51 @@
             "pp4": "absorptus",
             "conj": "2",
             "def": "to swallow down"
+        },
+
+        {
+            "pp1": "agnosco",
+            "inf": "agnoscere",
+            "pp3": "agnovi",
+            "pp4": "agnitus",
+            "conj": "3",
+            "def": "to recognize"
+        },
+
+        {
+            "pp1": "bibo",
+            "inf": "bibere",
+            "pp3": "bibi",
+            "pp4": "bibitus",
+            "conj": "3",
+            "def": "to drink"
+        },
+
+        {
+            "pp1": "emitto",
+            "inf": "emittere",
+            "pp3": "emisi",
+            "pp4": "emissus",
+            "conj": "3",
+            "def": "to send forth"
+        },
+
+        {
+            "pp1": "everto",
+            "inf": "evertere",
+            "pp3": "everti",
+            "pp4": "eversus",
+            "conj": "3",
+            "def": "to turn upside down"
+        },
+
+        {
+            "pp1": "offendo",
+            "inf": "offendere",
+            "pp3": "offendi",
+            "pp4": "offensus",
+            "conj": "3",
+            "def": "to hit"
         }
 
     ]
