@@ -87,10 +87,11 @@ $(document).ready(function() {
     var voice, person, number, tense;
     var needPluralStem = false;
 
-
     //gets random settings and puts into html
     function setForm() {
 
+        needPluralStem = false;
+        
         var voiceIndex = Math.floor(Math.random() * voiceSettings.length);
         voice = voiceSettings[voiceIndex];
 
@@ -118,6 +119,8 @@ $(document).ready(function() {
         } else {
             needPluralStem = false;
         }
+
+        console.log(needPluralStem);
 
         //needed to run getChart() properly
         if(number === "Singular") {
