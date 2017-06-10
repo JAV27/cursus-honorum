@@ -91,7 +91,7 @@ $(document).ready(function() {
     function setForm() {
 
         needPluralStem = false;
-        
+
         var voiceIndex = Math.floor(Math.random() * voiceSettings.length);
         voice = voiceSettings[voiceIndex];
 
@@ -244,6 +244,7 @@ $(document).ready(function() {
 
     $('.fa-envelope-o').on('click', function() {
         $('div.mainScreen').hide();
+        $('div.gameScreen').hide();
         $('div.settingsScreen').hide();
         $('div.leaderboard').hide();
         $('.emailModal').css({'display':'block', 'opacity':'0'}).animate({'opacity':'1'}, 1000).addClass('scale');
