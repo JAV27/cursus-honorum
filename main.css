@@ -92,7 +92,8 @@ div.body {
         border-color: #b778ba;
         outline: none; }
     div.body div.emailModal textarea {
-      height: 150px; }
+      height: 150px;
+      width: 80%; }
     div.body div.emailModal input {
       height: 15px; }
       div.body div.emailModal input[type="submit"] {
