@@ -141,7 +141,7 @@ function activeFutureConj(inf, conj) {
     var infSmallRoot = inf.substring(0, inf.length-2);
 
     if(conj === "1" || conj === "2") {
-        fullChart = new chart(infSmallRoot, "bo", "bis", "bit", "bimis", "bitis", "bunt");
+        fullChart = new chart(infSmallRoot, "bo", "bis", "bit", "bimus", "bitis", "bunt");
     }
 
     switch(conj) {
